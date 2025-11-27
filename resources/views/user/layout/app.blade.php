@@ -18,7 +18,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <!-- Vendor CSS Files -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/fancybox/fancybox.css" />
   <link href="{{ asset('assets/user/assets/vendor/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
@@ -26,6 +26,7 @@
   <link href="{{ asset('assets/user/assets/vendor/aos/aos.css') }}" rel="stylesheet">
   <link href="{{ asset('assets/user/assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
   <link href="{{ asset('assets/user/assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+  
 
   <!-- Main CSS File -->
   <link href="{{ asset('assets/user/assets/css/owl.carousel.min.css') }}" rel="stylesheet">
@@ -90,7 +91,7 @@
     @media screen and (max-width:900px){
       .mainNav{
        
-    top: 95px;
+    top: 88px;
 
       }
     }

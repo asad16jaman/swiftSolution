@@ -56,9 +56,20 @@
       border: 0px;
     }
 
+    .bg-base {
+      background: #0e363e;
+      color: #fff;
+    }
+
+    .bg-base:hover {
+      background-color: #fff;
+      color: #000;
+      border: 1px solid #0e363e;
+    }
+
     /* .mt-md-from-5 {
-        margin-top: 4.5rem !important;
-      } */
+                margin-top: 4.5rem !important;
+              } */
 
     .form-control-sm {
       border-radius: 0px;
@@ -85,19 +96,62 @@
       padding: 20px 0;
     }
 
+    .welcomeImage_height {
+      height: 240px !important;
+      width: 100%;
+    }
+
+    .f-600 {
+      font-weight: 600;
+    }
+
+    .learn-more-btn {
+      font-size: 12px;
+      padding: 3px 11px;
+    }
+
+    .managementImage_height {
+      height: 75px !important;
+        width: 75px !important;
+        margin-right: 20px;
+
+    }
+
+    .header-bg {
+      background-color: rgb(14 54 62) !important;
+      color: #fff;
+    }
+
+
+
     /* @media screen and (max-width:1400px) {
-        .welcome_lead {
-          font-size: 12px;
-          margin-bottom: 0;
-          text-align: justify;
-        }
-      } */
+                .welcome_lead {
+                  font-size: 12px;
+                  margin-bottom: 0;
+                  text-align: justify;
+                }
+              } */
 
     @media screen and (max-width:1400px) {
       .welcome_lead {
-        font-size: 10px;
+        font-size: 12px;
         margin-bottom: 0;
         text-align: justify;
+      }
+
+      .welcomeImage_height {
+        height: 200px !important;
+        width: 100%;
+      }
+
+      .f-14 {
+        font-size: 12px;
+      }
+
+      .managementImage_height {
+         height: 75px !important;
+        width: 75px !important;
+        margin-right: 20px;
       }
     }
 
@@ -114,6 +168,11 @@
       .section-1 .figure:after {
         left: 36px;
       }
+
+      .welcomeImage_height {
+        height: 150px !important;
+        width: 100%;
+      }
     }
   </style>
 
@@ -125,9 +184,9 @@
   <section id="hero" class="hero section dark-background">
     <!-- <img src="{{ asset('assets/user/assets/img/giphy.gif') }}" alt=""> -->
 
-     <video width="100%" height="100%" autoplay loop muted playsinline>
+    <video width="100%" height="100%" autoplay loop muted playsinline>
       <source src="{{ asset('assets/user/assets/img/hero_v1.mp4') }}" type="video/mp4">
-    </video> 
+    </video>
 
     <div class="container section-1">
       <div class="row">
@@ -178,7 +237,7 @@
 
             <div class="col-xl-4 col-md-4 col-6 section-2  d-flex justify-content-center" data-aos="fade-right"
               data-aos-delay="100">
-              <figure class="figure figure2">
+              <figure class="figure figure2 mb-2 mb-lg-0">
                 <div class="position-relative h-100">
                   <img src="{{ asset('assets/user/assets/img/service/event.jpg') }}" class="service-img-height">
                   <h1 class="text-dark position-absolute heroTitle">Event Management</h1>
@@ -192,7 +251,7 @@
 
             <div class="col-xl-4 col-md-4 col-6 section-2  d-flex justify-content-center" data-aos="fade-right"
               data-aos-delay="600">
-              <figure class="figure figure2">
+              <figure class="figure figure2 mb-0">
                 <div class="position-relative h-100">
                   <img src="{{ asset('assets/user/assets/img/service/delivery.png') }}" class="service-img-height">
                   <h1 class="text-dark position-absolute heroTitle">Logistics & Delivery</h1>
@@ -206,7 +265,7 @@
 
             <div class="col-xl-4 col-md-4 col-6 section-2  d-flex justify-content-center" data-aos="fade-right"
               data-aos-delay="900">
-              <figure class="figure figure2">
+              <figure class="figure figure2 mb-0">
                 <div class="position-relative h-100">
                   <img src="{{ asset('assets/user/assets/img/service/tour.webp') }}" class="service-img-height">
                   <h1 class="text-dark position-absolute heroTitle">Tour Guide</h1>
@@ -224,7 +283,7 @@
         <div class="col-12 col-lg-4 col-xxl-3 mb-5 mb-lg-0" data-aos="fade-left" data-aos-delay="1100">
           <div class="d-flex align-items-center h-100">
             <div class="card border border-white" style="background-color: #0f4e8147;border-radius:12px;width:100%">
-              <div class="card-body">
+              <div class="card-body py-xx-4 py-3">
                 <h5 class="card-title text-white">
                   <!-- Your Query/Feedback -->
                   Say Hello To US
@@ -233,7 +292,7 @@
                   <form action="https://linktechbd.com/query-store" method="POST">
                     <input type="hidden" name="_token" value="8coIaW5M8wHMTreIID0vxWirC73UNvs33UAyQdCU"> <input
                       type="hidden" name="_method" value="POST">
-                    <div class="row pt-1">
+                    <div class="row pt-xxl-2 mt-1">
                       <div class="col-3 pe-0">
                         <label for="name" class="form-label custom-form-label text-white">Name</label>
                       </div>
@@ -242,7 +301,7 @@
                           name="name" placeholder="name" required="">
                       </div>
                     </div>
-                    <div class="row mt-1">
+                    <div class="row mt-xxl-2 mt-1">
                       <div class="col-3 pe-0">
                         <label for="phone" class="form-label custom-form-label text-white">Phone</label>
                       </div>
@@ -251,7 +310,7 @@
                           name="phone" placeholder="number" required="">
                       </div>
                     </div>
-                    <div class="row mt-1">
+                    <div class="row mt-xxl-2 mt-1">
                       <div class="col-3 pe-0">
                         <label for="email" class="form-label custom-form-label text-white">Email</label>
                       </div>
@@ -261,7 +320,17 @@
                       </div>
                     </div>
 
-                    <div class="row mt-1">
+                    <div class="row mt-xxl-2 mt-1">
+                      <div class="col-3 pe-0">
+                        <label for="company" class="form-label custom-form-label text-white">Company</label>
+                      </div>
+                      <div class="col-9">
+                        <input type="text" value="" class="form-control form-control-sm custom-form-control " id="company"
+                          placeholder="Company Name" name="company">
+                      </div>
+                    </div>
+
+                    <div class="row mt-xxl-2 mt-1">
                       <div class="col-3 pe-0">
                         <label for="subject" class="form-label custom-form-label text-white">Subject</label>
                       </div>
@@ -270,31 +339,17 @@
                           placeholder="subject" name="email">
                       </div>
                     </div>
-                    {{-- <div class="row mt-1">
-                      <div class="col-3 pe-0">
-                        <label for="service" class="form-label custom-form-label text-white">Service</label>
-                      </div>
-                      <div class="col-9">
-                        <select type="text" class="form-control form-control-sm custom-form-control " id="service"
-                          name="service">
-                          <option value="" disabled="" selected="">Select service</option>
-                          <option value="1">Hotel Booking</option>
-                          <option value="2">Restaurant Booking</option>
-                          <option value="3">Travel And Tourism</option>
-                          <option value="4">Event Manage</option>
-                        </select>
-                      </div>
-                    </div> --}}
-                    <div class="row mt-1">
+
+                    <div class="row mt-xxl-2 mt-1">
                       <div class="col-3 pe-0">
                         <label for="message" class="form-label custom-form-label text-white">Message</label>
                       </div>
                       <div class="col-9">
                         <textarea type="text" class="form-control form-control-sm custom-form-control " id="message"
-                          rows="3" name="message" placeholder="write here..." value=""></textarea>
+                          rows="4" name="message" placeholder="write here..." value=""></textarea>
                       </div>
                     </div>
-                    <div class="float-end mt-2">
+                    <div class="float-end mt-xxl-2 mt-1">
                       <button class="btn sign-in-button card_btn">
 
                         Submit
@@ -321,21 +376,24 @@
 
         <div class="col-lg-4 col-md-6 col-12 d-flex">
           <div class="card home-card" data-aos="fade-right" data-aos-delay="100">
-            <div class="card-header text-center">
-              Welcome To Swift Solution
-            </div>
+            <!-- <div class="card-header text-center">
+                Welcome To Swift Solution
+              </div> -->
             <div class="card-body">
               <div class="row">
-                <div class="col-5">
+
+                {{-- <div class="col-5">
                   <img src="{{ asset('assets/user/assets/img/hotel/welcome.jpg') }}" class="img-fluid" />
-
-
-                </div>
-                <div class="col-7">
-                  <p class="welcome_lead">
+                </div> --}}
+                <h5 class="mb-2 f-600">Welcome To Swift Solution</h5>
+                <div class="col-12">
+                  <p class="welcome_lead f-14">
                     Welcome to Swift Solution — where your plans transform into seamless and memorable experiences. From
-                    travel and tourism to event coordination, hotel and restaurant booking, we are dedicated to delivering
-                    comfort, convenience, and excellence in every step of your journey.
+                    travel and tourism to event coordination, hotel and restaurant booking and excellence in every step of
+                    your journey. Whether you're planning a relaxing getaway, organizing a special event, or searching for
+                    the perfect dining experience, our expert team is here to support you with personalized service and
+                    reliable solutions. With a commitment to quality Swift Solution ensures that every moment becomes
+                    effortless.
                   </p>
                 </div>
               </div>
@@ -345,21 +403,35 @@
 
         <div class="col-lg-4 col-md-6 col-12 d-flex">
           <div class="card home-card" data-aos="fade-down" data-aos-delay="300">
-            <div class="card-header text-center">
+            <div class="card-header text-center header-bg">
               About Swift Solution
             </div>
             <div class="card-body">
               <div class="row">
                 <div class="col-5">
-                  <img src="{{ asset('assets/user/assets/img/hotel/about.png') }}" class="img-fluid" />
+                  <img src="{{ asset('assets/user/assets/img/hotel/about.png') }}"
+                    class="img-fluid img-thumbnail welcomeImage_height" />
                 </div>
                 <div class="col-7">
-                  <p class="welcome_lead">
-                    Swift Solution is your trusted partner for smooth, organized, and memorable services. We provide
-                    complete support in travel and tourism, event management, hotel and restaurant booking—ensuring
-                    comfort, reliability, and the perfect experience every time. With a dedicated team and a commitment to
-                    quality.
-                  </p>
+                  <div class="h-100 d-flex align-items-center flex-col">
+                    <div>
+                      <h5 class="mb-2 f-600">Swift Solution</h5>
+                      <p class="welcome_lead f-14">
+                        Swift Solution is your trusted partner for smooth, organized, and memorable services. We provide
+                        complete support in travel and tourism, event management hotel and restaurant booking—ensuring
+                        comfort, reliability.
+                        {{--
+                        , and the perfect experience every time. With a dedicated team and a
+                        commitment to
+                        quality. --}}
+                      <div class="d-flex justify-content-end mt-2">
+                        <button class="btn bg-base learn-more-btn">
+                          Read More
+                        </button>
+                      </div>
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -368,24 +440,82 @@
 
         <div class="col-lg-4 col-md-6 col-12 d-flex">
           <div class="card home-card" data-aos="fade-left" data-aos-delay="900">
-            <div class="card-header text-center">
+            <div class="card-header text-center header-bg">
               Massage From Management
             </div>
             <div class="card-body">
               <div class="row">
-                <div class="col-5">
-                  <img src="{{ asset('assets/user/assets/img/hotel/asad.png') }}" class="img-fluid" />
+                <div class="col-12 d-flex mb-2">
+                  <img src="{{ asset('assets/user/assets/img/hotel/asad.png') }}"
+                    class="img-fluid img-thumbnail managementImage_height" />
+
+                  <div class="mb-2">
+                    <h5 class="mb-0 f-600">ASADUZZAMAN</h5>
+                    <small><i>CEO</i></small><br>
+                    <small><i>Swift Solution</i></small>
+                  </div>
                 </div>
-                <div class="col-7">
-                  <p class="welcome_lead">
-                    At Swift Solution, we are dedicated to delivering reliable, quality service across travel, events, and
-                    hospitality. Our goal is to ensure every client experiences comfort, confidence in every step. With a
-                    commitment to integrity and excellence, we look forward to building lasting relationships and creating
-                    meaningful experiences for all.
-                  </p>
+                <div class="col-12">
+                  <div class="d-flex align-items-center">
+                    <div>
+
+                      <p class="welcome_lead f-14">
+                        At Swift Solution, we are dedicated to delivering reliable,events,
+                        and
+                        hospitality. Our goal is to ensure every client experiences comfort.
+                        confidence in every step. With a
+                        commitment to integrity and excellence, we look forward to building lasting relationships and
+                        creating
+                        meaningful experiences for all.
+                      </p>
+                      <div class="d-flex justify-content-end mt-2">
+                        <button class="btn bg-base learn-more-btn">
+                          Read More
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+
+
+            {{--
+            <div class="card-body">
+              <div class="row">
+                <div class="col-5">
+                  <img src="{{ asset('assets/user/assets/img/hotel/asad.png') }}"
+                    class="img-fluid img-thumbnail managementImage_height" />
+                </div>
+                <div class="col-7">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <div class="mb-2">
+                        <h5 class="mb-0 f-600">ASADUZZAMAN</h5>
+                        <small><i>CEO</i></small><br>
+                        <small><i>Swift Solution</i></small>
+                      </div>
+                      <p class="welcome_lead f-14">
+                        At Swift Solution, we are dedicated to delivering reliable,events,
+                        and
+                        hospitality. Our goal is to ensure every client experiences comfort.
+                        confidence in every step. With a
+                        commitment to integrity and excellence, we look forward to building lasting relationships and
+                        creating
+                        meaningful experiences for all.
+                      </p>
+                      <div class="d-flex justify-content-end mt-2">
+                        <button class="btn bg-base learn-more-btn">
+                          Read More
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>--}}
+
+
           </div>
         </div>
 
@@ -407,22 +537,26 @@
       mirror: false,
     });
 
-    {{-- // 
-    const aosElements = document.querySelectorAll('[data-aos]');
-    // observer 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        const el = entry.target;
-        if (!entry.isIntersecting) {
-          el.classList.remove('aos-animate');
-        } else {
-          setTimeout(() => {
-            AOS.refreshHard();
-          }, 100);
-        }
-      });
-    });
-    aosElements.forEach(el => observer.observe(el)); --}}
+    {
+      {
+        -- // 
+            const aosElements = document.querySelectorAll('[data-aos]');
+        // observer 
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            const el = entry.target;
+            if (!entry.isIntersecting) {
+              el.classList.remove('aos-animate');
+            } else {
+              setTimeout(() => {
+                AOS.refreshHard();
+              }, 100);
+            }
+          });
+        });
+        aosElements.forEach(el => observer.observe(el)); --}
+    }
+
 
 
 
