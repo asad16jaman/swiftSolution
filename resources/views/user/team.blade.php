@@ -1,6 +1,6 @@
 @extends('user.layout.app')
 
-@section('title', 'Home Page')
+@section('title', 'Swift Solution | Management Page')
 
 @push('style')
   <style>
@@ -43,7 +43,6 @@
 @section('content')
 
   <div class="page-title light-background" data-aos="fade">
-    
     <nav class="breadcrumbs">
       <div class="container">
         <ol>
@@ -59,14 +58,11 @@
       <h2 style="margin-bottom:0px">Management Team</h2>
     </div>
   </div><!-- End Section Title -->
-
   <!-- Team Section -->
   <section id="team" class="team section pt-0">
     <!-- Section Title -->
-    
     <div class="container">
       <div class="row gy-4 mb-4">
-        
         <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
           <div class="member team-shadow">
             <div class="card p-2 team-border">
@@ -88,7 +84,6 @@
             </div>
           </div>
         </div>
-
         <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
           <div class="member team-shadow">
             <div class="card p-2 team-border">
@@ -110,7 +105,6 @@
             </div>
           </div>
         </div>
-
         <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
           <div class="member team-shadow">
             <div class="card p-2 team-border">
@@ -132,7 +126,6 @@
             </div>
           </div>
         </div>
-
         <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
           <div class="member team-shadow">
             <div class="card p-2 team-border">
@@ -154,25 +147,14 @@
             </div>
           </div>
         </div>
-
       </div>
-
     </div>
-
   </section><!-- /Team Section -->
-
-
-
-
-
-
-
 @endsection
+
+
 
 @push('script')
   <script>
-
-    
-
   </script>
 @endpush

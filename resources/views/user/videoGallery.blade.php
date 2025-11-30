@@ -1,6 +1,6 @@
 @extends('user.layout.app')
 
-@section('title', 'Home Page')
+@section('title', 'Swift Solution | Video Gallery Page')
 
 @push('style')
   <style>

@@ -1,6 +1,6 @@
 @extends('user.layout.app')
 
-@section('title', 'Home Page')
+@section('title', 'Swift Solution | Contact Page')
 
 @push('style')
   <style>
@@ -54,7 +54,7 @@
     <!-- Section Title -->
     <div class="container section-title mt-5 d-flex justify-content-center" data-aos="fade-up">
       <div class="g-img">
-        <h2>Contact Us</h2>
+        <h2 class="mb-0">Contact Us</h2>
       </div>
 
     </div><!-- End Section Title -->

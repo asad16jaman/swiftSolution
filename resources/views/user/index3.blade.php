@@ -1,6 +1,6 @@
 @extends('user.layout.app')
 
-@section('title', 'Swift Solution | Home Page')
+@section('title', 'Home Page')
 
 @push('style')
   <link href="{{ asset('assets/user/assets/css/galleryeffect.css') }}" rel="stylesheet">
@@ -68,8 +68,8 @@
     }
 
     /* .mt-md-from-5 {
-                  margin-top: 4.5rem !important;
-                } */
+                margin-top: 4.5rem !important;
+              } */
 
     .form-control-sm {
       border-radius: 0px;
@@ -97,7 +97,7 @@
     }
 
     .welcomeImage_height {
-      height: 200px !important;
+      height: 240px !important;
       width: 100%;
     }
 
@@ -112,8 +112,8 @@
 
     .managementImage_height {
       height: 75px !important;
-      width: 75px !important;
-      margin-right: 20px;
+        width: 75px !important;
+        margin-right: 20px;
 
     }
 
@@ -121,106 +121,16 @@
       background-color: rgb(14 54 62) !important;
       color: #fff;
     }
-    .card{
-      width: 100%;
-    }
 
 
 
     /* @media screen and (max-width:1400px) {
-                  .welcome_lead {
-                    font-size: 12px;
-                    margin-bottom: 0;
-                    text-align: justify;
-                  }
-                } */
-
-    .hero img{
-          position: static;
-    border-radius: 4px 4px 0 0;
-    /* transition: 0.35s ease-in-out; */
-    }
-    .m_card-1{
-      margin:1px;
-    }
-
-    .heroCard_h4{
-      color: #0e363e;
-    text-align: center;
-    margin: 5px 0px;
-    font-size: 18px;
-    }
-
-    /* .hero_overlay{
-      width: 100%;
-    height: 100%;
-    background: #0e363e94;
-    position: absolute;
-    top: 0;
-    visibility: hidden;
-     transition: 0.35s; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    } */
-    .m_card-1:hover .hero_overlay{
-      visibility: visible;
-      
-    }
-    
-
-
-
-
-/* Parent must be relative */
-.lll {
-  position: relative;
-  overflow: hidden;
-}
-
-/* Image default state */
-.service-img-height {
-  width: 100%;
-  transition: transform 0.4s ease;
-}
-
-/* Zoom on hover of card */
-.m_card-1:hover .service-img-height {
-  transform: scale(1.1);
-}
-
-/* Overlay */
-.hero_overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #0e363e94;
-  opacity: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: opacity 0.4s ease;
-}
-
-/* On hover show overlay */
-.m_card-1:hover .hero_overlay {
-  opacity: 1;
-}
-
-/* Button inside overlay */
-.view_btn {
-  background: white;
-  color: #0e363e;
-  padding: 4px 8px;
-  border-radius: 4px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 14px;
-}
-
-
+                .welcome_lead {
+                  font-size: 12px;
+                  margin-bottom: 0;
+                  text-align: justify;
+                }
+              } */
 
     @media screen and (max-width:1400px) {
       .welcome_lead {
@@ -230,7 +140,7 @@
       }
 
       .welcomeImage_height {
-        height: 150px !important;
+        height: 200px !important;
         width: 100%;
       }
 
@@ -239,7 +149,7 @@
       }
 
       .managementImage_height {
-        height: 75px !important;
+         height: 75px !important;
         width: 75px !important;
         margin-right: 20px;
       }
@@ -283,109 +193,89 @@
         <div class="col-12 col-lg-8 col-xxl-9">
           <div class="row justify-content-center py-hero">
 
-            <div class="col-xl-4 col-md-4 col-6 section-2 mb-4 d-flex justify-content-center" data-aos="fade-right"
-              data-aos-delay="100">
-              <div class="card">
-                <div class="card-body m_card-1 p-0">
-                  <div class="position-relative lll">
-                    <img src="{{ asset('assets/user/assets/img/service/hotel.webp') }}" class="service-img-height">
-                    <div class="hero_overlay">
-                        <a href="{{ route('our_services', ['type' => 'resturant']) }}" class="view_btn">View Detail</a>
-                    </div>
-                  </div>
-                  <div>
-                    <h4 class="heroCard_h4">Hotel & Resort</h4>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-4 col-md-4 col-6 section-2 d-flex justify-content-center mb-4" data-aos="fade-right"
-              data-aos-delay="300">
-              <div class="card">
-                <div class="card-body m_card-1 p-0">
-                  <div class="position-relative lll">
-                    <img src="{{ asset('assets/user/assets/img/service/resturant.jpg') }}" class="service-img-height">
-                    <div class="hero_overlay">
-                        <a href="{{ route('our_services', ['type' => 'resturant']) }}" class="view_btn">View Detail</a>
-                    </div>
-                  </div>
-                  <div>
-                    <h4 class="heroCard_h4">Resturant Business</h4>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-4 col-md-4 col-6 section-2 d-flex justify-content-center mb-4" data-aos="fade-right"
-              data-aos-delay="600">
-              <div class="card">
-                <div class="card-body m_card-1 p-0">
-                  <div class="position-relative lll">
-                   <img src="{{ asset('assets/user/assets/img/service/travel.jpg') }}" class="service-img-height">
-                    <div class="hero_overlay">
-                        <a href="{{ route('our_services', ['type' => 'resturant']) }}" class="view_btn">View Detail</a>
-                    </div>
-                  </div>
-                  <div>
-                    <h4 class="heroCard_h4">Travel & Tourism</h4>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-4 col-md-4 col-6 section-2 d-flex justify-content-center mb-4 mb-xl-0" data-aos="fade-right"
-              data-aos-delay="100">
-              <div class="card">
-                <div class="card-body m_card-1 p-0">
-                  <div class="position-relative lll">
-                   <img src="{{ asset('assets/user/assets/img/service/event.jpg') }}" class="service-img-height">
-                    <div class="hero_overlay">
-                        <a href="{{ route('our_services', ['type' => 'resturant']) }}" class="view_btn">View Detail</a>
-                    </div>
-                  </div>
-                  <div>
-                    <h4 class="heroCard_h4">Event Management</h4>
-                  </div>
-                </div>
-              </div>
-            </div>
-
             <div class="col-xl-4 col-md-4 col-6 section-2 d-flex justify-content-center" data-aos="fade-right"
+              data-aos-delay="100">
+              <figure class="figure figure2">
+                <div class="position-relative h-100">
+                  <img src="{{ asset('assets/user/assets/img/service/hotel.webp') }}" class="service-img-height">
+                  <h1 class="text-dark position-absolute heroTitle">Hotel & Resort</h1>
+                </div>
+                <figcaption>
+                  <h3>Detail</h3>
+                </figcaption>
+                <a href="{{ route('our_services', ['type' => 'hotel']) }}"></a>
+              </figure>
+            </div>
+
+            <div class="col-xl-4 col-md-4  col-6 section-2  d-flex justify-content-center" data-aos="fade-right"
               data-aos-delay="300">
-              <div class="card">
-                <div class="card-body m_card-1 p-0">
-                  <div class="position-relative lll">
-                    <img src="{{ asset('assets/user/assets/img/service/delivery.png') }}" class="service-img-height">
-                    <div class="hero_overlay">
-                        <a href="{{ route('our_services', ['type' => 'resturant']) }}" class="view_btn">View Detail</a>
-                    </div>
-                  </div>
-                  <div>
-                    <h4 class="heroCard_h4">Logistics & Delivery</h4>
-                  </div>
+              <figure class="figure figure2">
+                <div class="position-relative h-100">
+                  <img src="{{ asset('assets/user/assets/img/service/resturant.jpg') }}" class="service-img-height">
+                  <h1 class="text-dark position-absolute heroTitle">Resturant Business</h1>
                 </div>
-              </div>
+                <figcaption>
+                  <h3>Detail</h3>
+                </figcaption>
+                <a href="{{ route('our_services', ['type' => 'resturant']) }}"></a>
+              </figure>
             </div>
 
-            <div class="col-xl-4 col-md-4 col-6 section-2 d-flex justify-content-center" data-aos="fade-right"
+            <div class="col-xl-4 col-md-4 col-6 section-2  d-flex justify-content-center" data-aos="fade-right"
               data-aos-delay="600">
-              <div class="card">
-                <div class="card-body m_card-1 p-0">
-                  <div class="position-relative lll">
-                    <img src="{{ asset('assets/user/assets/img/service/tour.webp') }}" class="service-img-height">
-                    <div class="hero_overlay">
-                        <a href="{{ route('our_services', ['type' => 'resturant']) }}" class="view_btn">View Detail</a>
-                    </div>
-                  </div>
-                  <div>
-                    <h4 class="heroCard_h4">Tour Guide</h4>
-                  </div>
+              <figure class="figure figure2">
+                <div class="position-relative h-100">
+                  <img src="{{ asset('assets/user/assets/img/service/travel.jpg') }}" class="service-img-height">
+                  <h1 class="text-dark position-absolute heroTitle">Travel & Tourism</h1>
                 </div>
-              </div>
+                <figcaption>
+                  <h3>Detail</h3>
+                </figcaption>
+                <a href="{{ route('our_services', ['type' => 'travel']) }}"></a>
+              </figure>
             </div>
 
-            
+            <div class="col-xl-4 col-md-4 col-6 section-2  d-flex justify-content-center" data-aos="fade-right"
+              data-aos-delay="100">
+              <figure class="figure figure2 mb-2 mb-lg-0">
+                <div class="position-relative h-100">
+                  <img src="{{ asset('assets/user/assets/img/service/event.jpg') }}" class="service-img-height">
+                  <h1 class="text-dark position-absolute heroTitle">Event Management</h1>
+                </div>
+                <figcaption>
+                  <h3>Detail</h3>
+                </figcaption>
+                <a href=""></a>
+              </figure>
+            </div>
+
+            <div class="col-xl-4 col-md-4 col-6 section-2  d-flex justify-content-center" data-aos="fade-right"
+              data-aos-delay="600">
+              <figure class="figure figure2 mb-0">
+                <div class="position-relative h-100">
+                  <img src="{{ asset('assets/user/assets/img/service/delivery.png') }}" class="service-img-height">
+                  <h1 class="text-dark position-absolute heroTitle">Logistics & Delivery</h1>
+                </div>
+                <figcaption>
+                  <h3>Detail</h3>
+                </figcaption>
+                <a href=""></a>
+              </figure>
+            </div>
+
+            <div class="col-xl-4 col-md-4 col-6 section-2  d-flex justify-content-center" data-aos="fade-right"
+              data-aos-delay="900">
+              <figure class="figure figure2 mb-0">
+                <div class="position-relative h-100">
+                  <img src="{{ asset('assets/user/assets/img/service/tour.webp') }}" class="service-img-height">
+                  <h1 class="text-dark position-absolute heroTitle">Tour Guide</h1>
+                </div>
+                <figcaption>
+                  <h3>Detail</h3>
+                </figcaption>
+                <a href=""></a>
+              </figure>
+            </div>
 
           </div>
         </div>
@@ -473,7 +363,6 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -488,8 +377,8 @@
         <div class="col-lg-4 col-md-6 col-12 d-flex">
           <div class="card home-card" data-aos="fade-right" data-aos-delay="100">
             <!-- <div class="card-header text-center">
-                  Welcome To Swift Solution
-                </div> -->
+                Welcome To Swift Solution
+              </div> -->
             <div class="card-body">
               <div class="row">
 
@@ -648,7 +537,32 @@
       mirror: false,
     });
 
-    
+    {
+      {
+        -- // 
+            const aosElements = document.querySelectorAll('[data-aos]');
+        // observer 
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            const el = entry.target;
+            if (!entry.isIntersecting) {
+              el.classList.remove('aos-animate');
+            } else {
+              setTimeout(() => {
+                AOS.refreshHard();
+              }, 100);
+            }
+          });
+        });
+        aosElements.forEach(el => observer.observe(el)); --}
+    }
+
+
+
+
+
+
+
 
   </script>
 @endpush

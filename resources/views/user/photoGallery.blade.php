@@ -1,6 +1,6 @@
 @extends('user.layout.app')
 
-@section('title', 'Home Page')
+@section('title', 'Swift Solution | Photo Gallery Page')
 
 @push('style')
 <link href="{{ asset('assets/user/assets/css/galleryeffect.css') }}" rel="stylesheet">
