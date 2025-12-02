@@ -27,9 +27,9 @@ class WingsController extends Controller
         $request->validate([
             'img' => "nullable|image|mimes:jpeg,jpg,png,gif,webp,svg",
             'title' => "nullable|string",
-            'link' => 'required|url'
+            'nav_name' => 'required'
         ]);
-        $data = $request->only('title','link');
+        $data = $request->only('title','nav_name');
         if ($id != null) {
             try{
             //user edit section is hare

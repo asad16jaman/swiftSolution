@@ -21,11 +21,11 @@ class AuthMessageController extends Controller
 
         $request->validate([
             'name'=> 'required',
-            'designation' => 'required'
-            
+            'designation' => 'required',
+            'company' => 'required'
         ]);
         
-         $data = $request->only(['name','speech','designation']);
+         $data = $request->only(['name','speech','designation','company']);
          $ch = Authmessage::first();
         if ($ch) {
             //user edit section is hare

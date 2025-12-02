@@ -310,3 +310,23 @@ body[data-background-color="dark"] .demo-icon .icon-class {
     right: -85%; } }
 
 /*# sourceMappingURL=demo.css.map */
+
+.form-control {
+    font-size: 1rem;
+    border-color: #2a2b2c78;
+    padding: .6rem 8.4px 1rem;
+    height: inherit !important;
+    border-width: 1px;
+    border-radius: 0;
+}
+.form-select{
+  border: 1px solid #84888d;
+  border-radius: 0;
+}
+
+.card{
+  border-radius: 0;
+}
+h6{
+  margin-bottom: 0px !important;
+}

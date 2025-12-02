@@ -43,8 +43,8 @@
         <div class="page-inner">
 
             <div class="card">
-                <div class="card-header pt-1 pb-0">
-                    <h4 class="text-center">Create User</h4>
+                <div class="card-header p-1 bg-primary text-white">
+                    <h6>Create User</h6>
                 </div>
                 <form method="post" enctype="multipart/form-data">
                     @csrf
@@ -152,8 +152,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
-                        <div class="card-header p-2">
-                            <h5 class="card-title ">ALL Users</h5>
+                        <div class="card-header p-2 bg-primary text-white">
+                            <h6 >All Users</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">

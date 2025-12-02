@@ -48,8 +48,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
-                        <div class="card-header">
-                            <h4 class="card-title">All Report</h4>
+                        <div class="card-header  bg-primary text-white p-1">
+                            <h6 class="">All Message</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">

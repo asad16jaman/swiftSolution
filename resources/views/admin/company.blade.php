@@ -4,7 +4,6 @@
 
 @section('style')
 <style>
-    
  .profileImg{
         width: auto;
         height: 50px; 
@@ -16,16 +15,12 @@
 </style>
 @endsection
 
-
-
 @section('bodyContent')
-
-
     <div class="container">
         <div class="page-inner">
             <div class="card">
-                <div class="card-header pt-1 pb-0">
-                    <h4 class="text-center">Company Detail</h4>
+                <div class="card-header p-1  bg-primary text-white">
+                    <h6>Company Detail</h6>
                 </div>
                 <form method="post" enctype="multipart/form-data">
                     @csrf
@@ -69,7 +64,7 @@
                                 <div class="row mb-2">
                                     <div class="col-md-3 col-12">
                                         <div class="">
-                                            <label for="phone">Office Hour :</label>
+                                            <label for="phone">Highlighter :</label>
                                         </div>
                                     </div>
                                     <div class="col-md-9 col-12">

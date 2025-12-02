@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use App\Models\Authmessage;
 use App\Models\Contact;
+use App\Models\Page;
 use App\Models\PhotoGallery;
 use App\Models\Service;
 use App\Models\Slider;
@@ -21,19 +22,15 @@ class HomeController extends Controller
     //
 
     public function index(){
-        
-        $sliders = Slider::where('status','=' , 1)->latest()->get();
-        $services = Service::where('home','=',1)->where('status','=',1)->latest()->take(4)->get();
-        $welcome = WelcomeNode::first();
+        $wings = Wing::where('home','=',1)->where('status','=',1)->latest()->take(6)->get();
         $auth_message = Authmessage::first();
-        $photo_gallery = PhotoGallery::latest()->take(10)->get();
-        $video_gallery = VideoGallery::latest()->take(10)->get();
-        $wings = Wing::where('home','=' , 1)->where('status','=',1)->take(4)->get();
-        return view('user.index',compact('sliders','services','welcome','auth_message','photo_gallery','video_gallery','wings'));
+        $about = Page::where('pagename','=','About')->first();
+        $welcome = Page::where('pagename','=','Welcome')->first();
+        return view('user.index',compact('wings','auth_message','about','welcome'));
     }
 
     public function about(){
-        $about = About::first();
+        $about = Page::where('pagename','=','About')->first();
         return view('user.about',compact('about'));
     }
 

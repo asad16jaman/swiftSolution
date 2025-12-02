@@ -28,9 +28,8 @@ class VideoController extends Controller
             'img' => "nullable|image|mimes:jpeg,jpg,png,gif,webp,svg",
             'title' => "nullable|string",
             'video_url' => 'required|url',
-            'duration' => 'required',
         ]);
-        $data = $request->only('title','duration','video_url');
+        $data = $request->only('title','video_url');
         if ($id != null) {
             try{
             //user edit section is hare

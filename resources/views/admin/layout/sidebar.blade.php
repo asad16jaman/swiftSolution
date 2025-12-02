@@ -1,14 +1,19 @@
-<div class="sidebar" data-background-color="dark">
+<style>
+  .logo-header[data-background-color] .btn-toggle, .logo-header[data-background-color] .more {
+    color: #000 !important;
+}
+</style>
+<div class="sidebar" data-background-color="white">
         <div class="sidebar-logo">
           <!-- Logo Header -->
-          <div class="logo-header" data-background-color="" style="background:#6861ce;">
+          <div class="logo-header" data-background-color="">
             <a href="{{ route('admin') }}" class="logo">
               <img
                 src="{{$company ? asset('storage/'.$company->logo) : asset('assets/admin/img/demoProfile.png') }}"
                 alt="navbar brand"
                 class="navbar-brand"
-                height="40px"
-                width="60px"
+                height="70px"
+                width="150px"
               />
               <!-- <span style="color:#fff;font-size:10px"></span> -->
             </a>
@@ -47,19 +52,21 @@
                 </a>
                 <div class="collapse {{ ($page == 'slider' || $page == 'users'  || $page == 'wellcome' || $page=='ch' ) ? 'show' : "" }}" id="web">
                   <ul class="nav nav-collapse">
-                      <li>
+
+                    {{-- <li>
                       <a href="{{ route('admin.slider') }}" style="padding: 5px 24px !important">
                         <p class="{{ ($page == 'slider') ? 'sub-item' : 'pl' }}">Slider</p>
                       </a>
-                    </li>
-                    <li>
+                    </li> --}}
+
+                    {{-- <li>
                       <a href="{{ route('admin.wellcome') }}" style="padding: 5px 24px !important">
                         <p class="{{($page == 'wellcome') ? 'sub-item' : "pl" }}">Welcome</p>
                       </a>
-                    </li>
+                    </li> --}}
                     <li>
                       <a href="{{ route('admin.ch-message') }}" style="padding: 5px 24px !important">
-                        <p class="{{($page == 'ch') ? 'sub-item' : "pl" }}">Chairman-message</p>
+                        <p class="{{($page == 'ch') ? 'sub-item' : "pl" }}">Authority Message</p>
                       </a>
                     </li>
 
@@ -132,12 +139,21 @@
                 </a>
               </li>
 
-              <li class="nav-item  {{ ($page=='feedback') ? 'active' : '' }}">
+              {{-- <li class="nav-item  {{ ($page=='feedback') ? 'active' : '' }}">
                 <a href="{{ route('admin.feedback') }}">
                  <i class="fas fa-comments"></i> 
                   <p>Feedback</p>
                 </a>
+              </li> --}}
+
+              
+               <li class="nav-item  {{ ($page=='management') ? 'active' : '' }}">
+                <a href="{{ route('admin.management') }}">
+                 <i class="fas fa-user-tie"></i>
+                  <p>Management</p>
+                </a>
               </li>
+              
 
               <li class="nav-item {{ ($page=='contact') ? 'active' : '' }}">
                 <a href="{{ route('admin.message') }}">
@@ -147,8 +163,8 @@
               </li>
               <li class="nav-item {{ ($page=='about') ? 'active' : '' }}">
                 <a href="{{ route('admin.about') }}">
-                  <i class="fas fa-info-circle"></i>
-                  <p>About Us</p>
+                 <i class="fa fa-file-alt"></i>
+                  <p>Pages</p>
                 </a>
               </li>
 

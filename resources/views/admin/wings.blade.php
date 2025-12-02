@@ -14,8 +14,9 @@
         }
 
         .profileImg {
-            width: auto;
-            height: 100px;
+            width: 100%;
+            max-width: 150px;
+            height: 45px;
             object-fit: cover;
             border: 2px dashed #ccc;
             border-radius: 6px;
@@ -44,59 +45,61 @@
 
 <div class="container">
     <div class="page-inner">
-        <div class="row">
+        <div class="row ">
             <div class="col-12">
                 <div class="card mb-1">
-                    <div class="card-header pt-1 pb-0">
-                        <h4 class="text-center">Create Wings</h4>
+                    <div class="card-header p-1  bg-primary text-white">
+                        <h6>Create Wings</h6>
                     </div>
                     <form method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="card-body px-3 py-1">
-                            <div class="row">
-                                <div class="mb-2 col-md-6 col-12">
-                                    <label for="title">Title</label>
+                            <div class="row mt-3">
+
+                                <div class="col-md-1 col-12"> <label for="title">Title*</label></div>
+                                <div class="col-md-3 col-12">
                                     <input type="text" name="title"
                                         value="{{ old('title', optional($editgallery)->title) }}" id="title"
                                         class="form-control form-control-sm">
                                 </div>
-                                <div class="mb-2 col-md-6 col-12">
-                                    <label for="link">Link*</label>
-                                    <input type="text" placeholder="Enter Link" name="link"
-                                        value="{{ old('link', optional($editgallery)->link) }}" id="link"
-                                        class="form-control form-control-sm @error('link') is-invalid @enderror">
-                                    @error('link')
+                                <div class="col-md-1 col-12 g-0"> <label for="nav_name">NavName*</label></div>
+                                <div class="col-md-3 col-12">
+                                    <input type="text" placeholder="Enter Link" name="nav_name"
+                                        value="{{ old('nav_name', optional($editgallery)->nav_name) }}" id="nav_name"
+                                        class="form-control form-control-sm @error('nav_name') is-invalid @enderror">
+                                    @error('nav_name')
                                         <p class="text-danger text-center">{{ $message }}</p>
                                     @enderror
                                 </div>
-                                <div class="mb-2 col-md-6 col-12">
-                                    <label for="" style="cursor: pointer;">
-                                        <!-- (placeholder) -->
-                                        Thumbnail*
-                                    </label>
-                                    <!-- hidden input -->
+                               
+                                <div class="col-md-1 col-12 g-0"><label for="" style="cursor: pointer;">Thumbnail*</label></div>
+                                <div class="col-md-2 col-12">
                                     <input type="file" class="form-control form-control-sm mb-1" name="img" id="imageInput"
                                         accept="image/*">
-                                    <img id="previewImage"
-                                        src="{{ ($editgallery && $editgallery->img) ? asset('storage/' . $editgallery->img) : asset('assets/admin/img/demoUpload.jpg') }}"
-                                        alt="Demo Image" class="profileImg" style="">
+                                    
                                     @error('img')
                                         <p class="text-danger text-center">{{ $message }}</p>
                                     @enderror
                                 </div>
+
+                                <div class="col-md-1 col-12">
+                                    <img id="previewImage"
+                                        src="{{ ($editgallery && $editgallery->img) ? asset('storage/' . $editgallery->img) : asset('assets/admin/img/demoUpload.jpg') }}"
+                                        alt="Demo Image" class="profileImg" style="">
+                                </div>
                                 
                             </div>
-                            <div class="d-flex justify-content-end">
+                            <div class="d-flex justify-content-end mt-2">
                                 <input type="submit" value="Submit" class="btn btn-primary me-3 p-2">
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
-            <div class="col-12">
+            <div class="col-12 mt-3">
                 <div class="card">
-                    <div class="card-header p-2">
-                        <h5 class="card-title ">Our Wings</h5>
+                    <div class="card-header p-2  bg-primary text-white">
+                        <h6 class="">Our Wings</h6>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -113,7 +116,6 @@
                                                         <th style="width: 304.469px;">Title</th>
                                                         <th style="width: 60.469px;">Home</th>
                                                         <th style="width: 60.469px;">Status</th>
-                                                        <th style="width: 50.469px;">Link</th>
                                                         <th style="width: 81.375px;">Action</th>
                                                     </tr>
                                                 </thead>
@@ -144,9 +146,6 @@
                                                                     <option value="inactive" {{ ($gallery->status == 0) ? "selected" : '' }}>Inactive</option>
                                                                 </select>
                                                             </form>
-                                                        </td>
-                                                        <td class="text-center">
-                                                            <a href="{{ $gallery->link }}" target="_blank">View</a>
                                                         </td>
                                                         <td class="d-flex justify-content-center">
                                                             <a href="{{   route('admin.wings', ['id' => $gallery->id])  }}"
@@ -235,6 +234,22 @@
                 sort: false
             });
         })
+
+
+    function slugify(text) {
+        return text
+            .toString()
+            .toLowerCase()
+            .trim()
+            .replace(/\s+/g, '-')        // space → dash
+            .replace(/[^\w\-]+/g, '')    // remove special chars
+            .replace(/\-\-+/g, '-');     // multiple dash → single dash
+    }
+
+    document.getElementById('title').addEventListener('keyup', function () {
+        let title = this.value;
+        document.getElementById('nav_name').value = slugify(title);
+    });
     </script>
 
 @endpush

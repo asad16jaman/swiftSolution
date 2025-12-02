@@ -61,11 +61,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 py-3" style="text-align: justify;">
-                    
                     <div class="about-top-image">
                         <img src="{{ asset('assets/user/assets/img/gallery/g2.jpg') }}" alt="pic">
                     </div>
-
                     <p class="mt-2" style="text-align: justify;">
                        Swift Solution has been delivering exceptional services in the fields of Travel & Tourism, Event Management, Hotel Booking, and Restaurant Reservation since its inception. Over the years, we have built a strong reputation for ensuring comfortable, reliable, and memorable travel experiences for clients across Bangladesh.
 
@@ -83,12 +81,6 @@
             </div>
         </div>
     </section>
-
-
-
-
-
-
 
 @endsection
 

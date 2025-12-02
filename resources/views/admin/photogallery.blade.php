@@ -49,8 +49,8 @@
             <div class="row">
                 <div class="col-md-5 col-12">
                     <div class="card mb-1">
-                        <div class="card-header pt-1 pb-0">
-                            <h4 class="text-center">Create Gallery</h4>
+                        <div class="card-header p-1  bg-primary text-white">
+                            <h6>Create Gallery</h6>
                         </div>
                         <form method="post" enctype="multipart/form-data">
                             @csrf
@@ -66,7 +66,7 @@
                                         Image
                                     </label>
                                     <!-- hidden input -->
-                                    <input type="file" class="form-control mb-1" name="img" id="imageInput"
+                                    <input type="file" class="form-control form-control-sm mb-1" name="img" id="imageInput"
                                         accept="image/*">
 
                                     <img id="previewImage"
@@ -85,8 +85,8 @@
                 </div>
                 <div class="col-md-7 col-12">
                     <div class="card">
-                        <div class="card-header p-2">
-                            <h5 class="card-title ">ALL Galleries</h5>
+                        <div class="card-header p-2  bg-primary text-white p-1">
+                            <h6 class="">ALL Galleries</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">

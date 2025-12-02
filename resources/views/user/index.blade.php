@@ -68,8 +68,8 @@
     }
 
     /* .mt-md-from-5 {
-                  margin-top: 4.5rem !important;
-                } */
+                    margin-top: 4.5rem !important;
+                  } */
 
     .form-control-sm {
       border-radius: 0px;
@@ -121,104 +121,106 @@
       background-color: rgb(14 54 62) !important;
       color: #fff;
     }
-    .card{
+
+    .card {
       width: 100%;
     }
 
 
 
     /* @media screen and (max-width:1400px) {
-                  .welcome_lead {
-                    font-size: 12px;
-                    margin-bottom: 0;
-                    text-align: justify;
-                  }
-                } */
+                    .welcome_lead {
+                      font-size: 12px;
+                      margin-bottom: 0;
+                      text-align: justify;
+                    }
+                  } */
 
-    .hero img{
-          position: static;
-    border-radius: 4px 4px 0 0;
-    /* transition: 0.35s ease-in-out; */
-    }
-    .m_card-1{
-      margin:1px;
+    .hero img {
+      position: static;
+      border-radius: 4px 4px 0 0;
+      /* transition: 0.35s ease-in-out; */
     }
 
-    .heroCard_h4{
+    .m_card-1 {
+      margin: 1px;
+    }
+
+    .heroCard_h4 {
       color: #0e363e;
-    text-align: center;
-    margin: 5px 0px;
-    font-size: 18px;
+      text-align: center;
+      margin: 5px 0px;
+      font-size: 18px;
     }
 
     /* .hero_overlay{
-      width: 100%;
-    height: 100%;
-    background: #0e363e94;
-    position: absolute;
-    top: 0;
-    visibility: hidden;
-     transition: 0.35s; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    } */
-    .m_card-1:hover .hero_overlay{
+        width: 100%;
+      height: 100%;
+      background: #0e363e94;
+      position: absolute;
+      top: 0;
+      visibility: hidden;
+       transition: 0.35s; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      } */
+    .m_card-1:hover .hero_overlay {
       visibility: visible;
-      
+
     }
-    
 
 
 
 
-/* Parent must be relative */
-.lll {
-  position: relative;
-  overflow: hidden;
-}
 
-/* Image default state */
-.service-img-height {
-  width: 100%;
-  transition: transform 0.4s ease;
-}
+    /* Parent must be relative */
+    .lll {
+      position: relative;
+      overflow: hidden;
+    }
 
-/* Zoom on hover of card */
-.m_card-1:hover .service-img-height {
-  transform: scale(1.1);
-}
+    /* Image default state */
+    .service-img-height {
+      width: 100%;
+      transition: transform 0.4s ease;
+    }
 
-/* Overlay */
-.hero_overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #0e363e94;
-  opacity: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: opacity 0.4s ease;
-}
+    /* Zoom on hover of card */
+    .m_card-1:hover .service-img-height {
+      transform: scale(1.1);
+    }
 
-/* On hover show overlay */
-.m_card-1:hover .hero_overlay {
-  opacity: 1;
-}
+    /* Overlay */
+    .hero_overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #0e363e94;
+      opacity: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: opacity 0.4s ease;
+    }
 
-/* Button inside overlay */
-.view_btn {
-  background: white;
-  color: #0e363e;
-  padding: 4px 8px;
-  border-radius: 4px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 14px;
-}
+    /* On hover show overlay */
+    .m_card-1:hover .hero_overlay {
+      opacity: 1;
+    }
+
+    /* Button inside overlay */
+    .view_btn {
+      background: white;
+      color: #0e363e;
+      padding: 4px 8px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+    }
 
 
 
@@ -290,7 +292,7 @@
                   <div class="position-relative lll">
                     <img src="{{ asset('assets/user/assets/img/service/hotel.webp') }}" class="service-img-height">
                     <div class="hero_overlay">
-                        <a href="{{ route('our_services', ['type' => 'resturant']) }}" class="view_btn">View Detail</a>
+                      <a href="{{ route('our_services', ['type' => 'resturant']) }}" class="view_btn">View Detail</a>
                     </div>
                   </div>
                   <div>
@@ -307,7 +309,7 @@
                   <div class="position-relative lll">
                     <img src="{{ asset('assets/user/assets/img/service/resturant.jpg') }}" class="service-img-height">
                     <div class="hero_overlay">
-                        <a href="{{ route('our_services', ['type' => 'resturant']) }}" class="view_btn">View Detail</a>
+                      <a href="{{ route('our_services', ['type' => 'resturant']) }}" class="view_btn">View Detail</a>
                     </div>
                   </div>
                   <div>
@@ -322,9 +324,9 @@
               <div class="card">
                 <div class="card-body m_card-1 p-0">
                   <div class="position-relative lll">
-                   <img src="{{ asset('assets/user/assets/img/service/travel.jpg') }}" class="service-img-height">
+                    <img src="{{ asset('assets/user/assets/img/service/travel.jpg') }}" class="service-img-height">
                     <div class="hero_overlay">
-                        <a href="{{ route('our_services', ['type' => 'resturant']) }}" class="view_btn">View Detail</a>
+                      <a href="{{ route('our_services', ['type' => 'resturant']) }}" class="view_btn">View Detail</a>
                     </div>
                   </div>
                   <div>
@@ -334,14 +336,14 @@
               </div>
             </div>
 
-            <div class="col-xl-4 col-md-4 col-6 section-2 d-flex justify-content-center mb-4 mb-xl-0" data-aos="fade-right"
-              data-aos-delay="100">
+            <div class="col-xl-4 col-md-4 col-6 section-2 d-flex justify-content-center mb-4 mb-xl-0"
+              data-aos="fade-right" data-aos-delay="100">
               <div class="card">
                 <div class="card-body m_card-1 p-0">
                   <div class="position-relative lll">
-                   <img src="{{ asset('assets/user/assets/img/service/event.jpg') }}" class="service-img-height">
+                    <img src="{{ asset('assets/user/assets/img/service/event.jpg') }}" class="service-img-height">
                     <div class="hero_overlay">
-                        <a href="{{ route('our_services', ['type' => 'resturant']) }}" class="view_btn">View Detail</a>
+                      <a href="{{ route('our_services', ['type' => 'resturant']) }}" class="view_btn">View Detail</a>
                     </div>
                   </div>
                   <div>
@@ -358,7 +360,7 @@
                   <div class="position-relative lll">
                     <img src="{{ asset('assets/user/assets/img/service/delivery.png') }}" class="service-img-height">
                     <div class="hero_overlay">
-                        <a href="{{ route('our_services', ['type' => 'resturant']) }}" class="view_btn">View Detail</a>
+                      <a href="{{ route('our_services', ['type' => 'resturant']) }}" class="view_btn">View Detail</a>
                     </div>
                   </div>
                   <div>
@@ -375,7 +377,7 @@
                   <div class="position-relative lll">
                     <img src="{{ asset('assets/user/assets/img/service/tour.webp') }}" class="service-img-height">
                     <div class="hero_overlay">
-                        <a href="{{ route('our_services', ['type' => 'resturant']) }}" class="view_btn">View Detail</a>
+                      <a href="{{ route('our_services', ['type' => 'resturant']) }}" class="view_btn">View Detail</a>
                     </div>
                   </div>
                   <div>
@@ -385,7 +387,7 @@
               </div>
             </div>
 
-            
+
 
           </div>
         </div>
@@ -488,23 +490,18 @@
         <div class="col-lg-4 col-md-6 col-12 d-flex">
           <div class="card home-card" data-aos="fade-right" data-aos-delay="100">
             <!-- <div class="card-header text-center">
-                  Welcome To Swift Solution
-                </div> -->
+                    Welcome To Swift Solution
+                  </div> -->
             <div class="card-body">
               <div class="row">
 
                 {{-- <div class="col-5">
                   <img src="{{ asset('assets/user/assets/img/hotel/welcome.jpg') }}" class="img-fluid" />
                 </div> --}}
-                <h5 class="mb-2 f-600">Welcome To Swift Solution</h5>
+                <h5 class="mb-2 f-600">{{ optional($welcome)->title }}</h5>
                 <div class="col-12">
                   <p class="welcome_lead f-14">
-                    Welcome to Swift Solution — where your plans transform into seamless and memorable experiences. From
-                    travel and tourism to event coordination, hotel and restaurant booking and excellence in every step of
-                    your journey. Whether you're planning a relaxing getaway, organizing a special event, or searching for
-                    the perfect dining experience, our expert team is here to support you with personalized service and
-                    reliable solutions. With a commitment to quality Swift Solution ensures that every moment becomes
-                    effortless.
+                    {!!  strip_tags(optional($welcome)->description) !!}
                   </p>
                 </div>
               </div>
@@ -515,29 +512,24 @@
         <div class="col-lg-4 col-md-6 col-12 d-flex">
           <div class="card home-card" data-aos="fade-down" data-aos-delay="300">
             <div class="card-header text-center header-bg">
-              About Swift Solution
+                    {{ optional($about)->title }}
             </div>
             <div class="card-body">
               <div class="row">
                 <div class="col-5">
-                  <img src="{{ asset('assets/user/assets/img/hotel/about.png') }}"
+                  <img src="{{ asset('storage/'.optional($about)->picture) }}"
                     class="img-fluid img-thumbnail welcomeImage_height" />
                 </div>
                 <div class="col-7">
                   <div class="h-100 d-flex align-items-center flex-col">
                     <div>
-                      <h5 class="mb-2 f-600">Swift Solution</h5>
+                      <h5 class="mb-2 f-600">{{ optional($company)->name }}</h5>
                       <p class="welcome_lead f-14">
-                        Swift Solution is your trusted partner for smooth, organized, and memorable services. We provide
-                        complete support in travel and tourism, event management hotel and restaurant booking—ensuring
-                        comfort, reliability.
-                        {{--
-                        , and the perfect experience every time. With a dedicated team and a
-                        commitment to
-                        quality. --}}
+                        {!! substr(strip_tags(optional($about)->description),0,220) !!}
+                      
                       <div class="d-flex justify-content-end mt-2">
                         <button class="btn bg-base learn-more-btn">
-                          Read More
+                          {{ optional($about)->button }}
                         </button>
                       </div>
                       </p>
@@ -557,13 +549,13 @@
             <div class="card-body">
               <div class="row">
                 <div class="col-12 d-flex mb-2">
-                  <img src="{{ asset('assets/user/assets/img/hotel/asad.png') }}"
+                  <img src="{{ asset('storage/'.optional($auth_message)->img) }}"
                     class="img-fluid img-thumbnail managementImage_height" />
 
                   <div class="mb-2">
-                    <h5 class="mb-0 f-600">ASADUZZAMAN</h5>
-                    <small><i>CEO</i></small><br>
-                    <small><i>Swift Solution</i></small>
+                    <h5 class="mb-0 f-600">{{ optional($auth_message)->name  }}</h5>
+                    <small><i>{{ optional($auth_message)->designation  }}</i></small><br>
+                    <small><i>{{ optional($auth_message)->company  }}</i></small>
                   </div>
                 </div>
                 <div class="col-12">
@@ -571,13 +563,7 @@
                     <div>
 
                       <p class="welcome_lead f-14">
-                        At Swift Solution, we are dedicated to delivering reliable,events,
-                        and
-                        hospitality. Our goal is to ensure every client experiences comfort.
-                        confidence in every step. With a
-                        commitment to integrity and excellence, we look forward to building lasting relationships and
-                        creating
-                        meaningful experiences for all.
+                        {{ substr(strip_tags(optional($auth_message)->speech),0,310) }}
                       </p>
                       <div class="d-flex justify-content-end mt-2">
                         <button class="btn bg-base learn-more-btn">
@@ -589,44 +575,6 @@
                 </div>
               </div>
             </div>
-
-
-            {{--
-            <div class="card-body">
-              <div class="row">
-                <div class="col-5">
-                  <img src="{{ asset('assets/user/assets/img/hotel/asad.png') }}"
-                    class="img-fluid img-thumbnail managementImage_height" />
-                </div>
-                <div class="col-7">
-                  <div class="d-flex align-items-center">
-                    <div>
-                      <div class="mb-2">
-                        <h5 class="mb-0 f-600">ASADUZZAMAN</h5>
-                        <small><i>CEO</i></small><br>
-                        <small><i>Swift Solution</i></small>
-                      </div>
-                      <p class="welcome_lead f-14">
-                        At Swift Solution, we are dedicated to delivering reliable,events,
-                        and
-                        hospitality. Our goal is to ensure every client experiences comfort.
-                        confidence in every step. With a
-                        commitment to integrity and excellence, we look forward to building lasting relationships and
-                        creating
-                        meaningful experiences for all.
-                      </p>
-                      <div class="d-flex justify-content-end mt-2">
-                        <button class="btn bg-base learn-more-btn">
-                          Read More
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>--}}
-
-
           </div>
         </div>
 
@@ -648,7 +596,7 @@
       mirror: false,
     });
 
-    
+
 
   </script>
 @endpush

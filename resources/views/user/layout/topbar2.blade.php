@@ -108,26 +108,25 @@
         <div class="row row-cols-2 align-items-center">
             <div class="col-lg-6 d-none d-lg-block">
                 <a href="/" class="logo d-flex align-items-center me-auto me-xl-0">
-                    <img src="{{ asset('assets/user/assets/img/swift_logo.png') }}" alt="" class="logo-height">
+                    <img src="{{ optional($company)->logo ? asset('storage/'.$company->logo) : asset('assets/user/assets/img/swift_logo.png') }}" alt="" class="logo-height">
                 </a>
             </div>
             <div class="col-12 col-lg-6 d-grid justify-content-end">
                 <div class="holographic-card">
                     <ul>
                         <li>
-                            <a href="#">
-                                 <i class="fab fa-facebook-f icon"></i>  
-                                 
+                            <a href="{{ optional($company)->facebook }}">
+                                 <i class="fab fa-facebook-f icon"></i>
                               </a>
                         </li>
                         <li>
-                            <a href="#"><i class="fab fa-twitter icon"></i></a>
+                            <a href="{{ optional($company)->twiter }}"><i class="fab fa-twitter icon"></i></a>
                         </li>
                         <li>
-                            <a href="#"><i class="fab fa-linkedin-in icon"></i></a>
+                            <a href="{{ optional($company)->linkdin }}"><i class="fab fa-linkedin-in icon"></i></a>
                         </li>
                         <li>
-                            <a href="#"><i class="fab fa-instagram icon"></i></a>
+                            <a href="{{ optional($company)->instagram }}"><i class="fab fa-instagram icon"></i></a>
                         </li>
                     </ul>
                 </div>

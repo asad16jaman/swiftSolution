@@ -27,7 +27,7 @@
         <div class="row row-cols-2 align-items-center">
             <div class="col-1 col-lg-6">
                 <marquee behavior="" direction="" class="text-white  d-none d-lg-block">
-                    Your Trusted Travel Partner – Visa • Tours • Events • Hotel Booking
+                    {{ optional($company)->service_time }}
                 </marquee>
             </div>
             <div class="col-12 col-lg-6 d-grid justify-content-end">
@@ -50,7 +50,7 @@
                     </li> -->
 
                     <li class="ms-3 d-flex py-topbar">
-                        Hotline: +01755420350
+                        Hotline:  {{ optional($company)->phone }}
                     </li>
 
                 </ul>

@@ -22,8 +22,9 @@ return new class extends Migration
             $table->string('linkedin_url')->nullable();
             $table->string('facebook_url')->nullable();
             $table->string('instagram_url')->nullable();
+            $table->string('twitter_url')->nullable();
             $table->text('bio')->nullable();
-            $table->enum('status', ['active', 'inactive'])->default('active');
+            $table->boolean('status')->default(1);
             $table->timestamps();
         });
     }

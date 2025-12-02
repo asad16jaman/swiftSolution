@@ -50,7 +50,7 @@
             text-align: center;
             /* -webkit-text-stroke: 2px #0e363e; */
             /* -webkit-text-fill-color: #0f4e81; */
-            color: #0f4e81;
+            color: #000;
             font-size: 23px;
             /* bottom: 8px; */
             width: 101%;
