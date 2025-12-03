@@ -92,20 +92,21 @@
 
       <!-- End Service Item -->
 
-      <div class="col-lg-3 col-md-4 col-6 mb-4" data-aos="fade-up" data-aos-delay="100">
-        <div class="g-containerl position-relative p-1 h-100">
-          <a href="https://youtu.be/M_rH3Z_R6-U?si=DqHtrLt_U-fM-T_Z" data-fancybox="gallery" data-caption="video gallery 1">
-            <div class="position-relative g-container h-100">
-              <div class="position-absolute  v_g-overlay">
-                <i class="bi bi-play-fill video_icon"></i>
+      @foreach ($video_gallery as $gallery)
+        <div class="col-lg-3 col-md-4 col-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="g-containerl position-relative p-1 h-100">
+            <a href="{{ $gallery->video_url }}" data-fancybox="{{ $gallery->title }}" data-caption="{{ $gallery->title }}">
+              <div class="position-relative g-container h-100">
+                <div class="position-absolute  v_g-overlay">
+                  <i class="bi bi-play-fill video_icon"></i>
+                </div>
+                <img src="{{ asset('storage/'.$gallery->img) }}" class="img-fluid g-height" alt="">
               </div>
-              <img src="{{ asset('assets/user/assets/img/gallery/g1.jpg') }}" class="img-fluid g-height" alt="">
-            </div>
-          </a>
+            </a>
+          </div>
         </div>
-      </div>
-
-      <div class="col-lg-3 col-md-4 col-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+      @endforeach
+      {{-- <div class="col-lg-3 col-md-4 col-6 mb-4" data-aos="fade-up" data-aos-delay="100">
         <div class="g-containerl position-relative p-1 h-100">
           <a href="https://youtu.be/M_rH3Z_R6-U?si=DqHtrLt_U-fM-T_Z" data-fancybox="gallery" data-caption="video gallery 1">
             <div class="position-relative g-container h-100">
@@ -181,7 +182,7 @@
             </div>
           </a>
         </div>
-      </div>
+      </div> --}}
 
       
 

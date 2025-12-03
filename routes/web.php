@@ -21,14 +21,15 @@ use App\Http\Controllers\Admin\PhotoGalleryController;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::post('/', [HomeController::class, 'styHellow'])->name('sayhellow');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/services/{type}', [HomeController::class, 'ourservice'])->name('our_services');
-Route::get('/service/{uid}/detail', [HomeController::class, 'serviceDetail'])->name('services.detail');
+Route::get('/service/{slug}/detail', [HomeController::class, 'serviceDetail'])->name('services.detail');
 Route::get('/teams', [HomeController::class, 'teams'])->name('our_management');
 Route::get('/photo-gallery', [HomeController::class, 'photoGallery'])->name('photoGallery');
 Route::get('/video-gallery', [HomeController::class, 'videoGallery'])->name('videoGallery');
 Route::get('/contact', [HomeController::class, 'contactpage'])->name('contactPage');
-// Route::post('/contact',[HomeController::class,'saveMessage'])->name('contactPage');
+Route::post('/contact',[HomeController::class,'saveMessage'])->name('contactPage');
 Route::get('/resturant/book', [HomeController::class, 'returantBook'])->name('resturant.book');
 
 

@@ -66,8 +66,6 @@
     .holographic-card ul li a:hover:before {
         top: 0;
       }
-    
-
      .holographic-card  ul li:nth-child(1) a {
         border: 2px solid #3b5999;
       }
@@ -83,9 +81,6 @@
      .holographic-card ul li:nth-child(4) a {
         border: 2px solid #dd4b39;
       } 
-
-
-
     .holographic-card  ul li:nth-child(1) a:before {
         background: #3b5999;
       }
@@ -117,7 +112,7 @@
                         <li>
                             <a href="{{ optional($company)->facebook }}">
                                  <i class="fab fa-facebook-f icon"></i>
-                              </a>
+                            </a>
                         </li>
                         <li>
                             <a href="{{ optional($company)->twiter }}"><i class="fab fa-twitter icon"></i></a>

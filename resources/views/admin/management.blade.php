@@ -33,6 +33,13 @@
             padding: 2px !important;
             margin-bottom: 2px;
         }
+        .social_icon{
+           padding: 3px 9px;
+            background: #FF9800;
+            border-radius: 3px;
+            margin: 0 3px;
+            color: #fff;
+        }
     </style>
 @endsection
 
@@ -165,10 +172,11 @@
                                     <thead class="headbg">
                                         <tr role="row bg-dark">
                                             <th style="width: 136.031px;">SL NO:</th>
-                                            <th style="width: 214.469px;">Picture</th>
+                                            <th style="width: 75.469px;">Picture</th>
                                             <th style="width: 214.469px;">Name</th>
+                                            <th style="width: 214.469px;">email</th>
                                             <th style="width: 214.469px;">Designation</th>
-                                            <th style="width: 214.469px;">Detail</th>
+                                            <th style="width: 214.469px;">links</th>
                                             <th style="width: 81.375px;">Action</th>
                                         </tr>
                                     </thead>
@@ -182,9 +190,15 @@
                                                         alt="user profile picture">
                                                 </td>
                                                 <td>{{ $team->name }}</td>
+                                                <td>{{ $team->email }}</td>
                                                 <td>{{ $team->designation }}</td>
                                                 <td>
-                                                    <a href="">Detail</a>
+                                                    <div class="d-flex justify-content-center">
+                                                        <a href="{{ $team->twitter_url }}" target="_blank" class="social_icon"><i class="fab fa-twitter"></i></a>
+                                                        <a href="{{ $team->facebook_url }}" target="_blank" class="social_icon"><i class="fab fa-facebook-f iconsize"></i></a>
+                                                        <a href="{{ $team->instagram_url }}" target="_blank" class="social_icon"><i class="fab fa-instagram iconsize"></i></a>
+                                                        <a href="{{ $team->linkedin_url }}" target="_blank" class="social_icon"><i class="fab fa-linkedin-in iconsize"></i></a>
+                                                    </div>
                                                 </td>
                                                 <td class="d-flex justify-content-center">
                                                     <a href="{{ route('admin.management', ['id' => $team->id, 'page' => request()->query('page'), 'search' => request()->query('search')]) }}"

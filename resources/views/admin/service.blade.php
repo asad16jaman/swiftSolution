@@ -181,7 +181,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="row">
                             <div class="col-12">
                                 <div class="">
@@ -191,7 +190,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="d-flex justify-content-end mt-3">
                             <input type="submit" value="Submit" class="btn btn-primary me-3 p-2">
                         </div>
@@ -205,7 +203,6 @@
                             <h6 class="">All Service</h6>
                         </div>
                         <div class="card-body">
-
                             <div class="table-responsive">
                                 <table id="basic-datatables" class="display table table-striped table-hover">
                                     <thead class="headbg">
@@ -220,7 +217,6 @@
                                             <th style="width: 81.375px;">Action</th>
                                         </tr>
                                     </thead>
-
                                     <tbody>
                                         @forelse($datas as $data)
                                             <tr role="row" class="odd">
@@ -256,8 +252,6 @@
                                                 <td>{{ $data->name }}</td>
                                                 <td>{{ $data->wing->title }}</td>
                                                 <td>
-
-
                                                     <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal"
                                                         data-bs-target="#exampleModal{{ $data->id }}">
                                                         View
@@ -276,11 +270,9 @@
                                                                 <div class="modal-body">
                                                                    {!! $data->description !!}
                                                                 </div>
-                                                                
                                                             </div>
                                                         </div>
                                                     </div>
-
                                                 </td>
                                                 <td>
                                                     <form action="{{ route('admin.servicestatus', ['id' => $data->id]) }}"
@@ -294,7 +286,6 @@
                                                         </select>
                                                     </form>
                                                 </td>
-
                                                 <td class="d-flex justify-content-center">
                                                     <a href="{{ route('admin.service', ['id' => $data->id, 'page' => request()->query('page'), 'search' => request()->query('search')]) }}"
                                                         class="btn btn-info p-1 me-1">

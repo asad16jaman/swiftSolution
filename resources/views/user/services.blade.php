@@ -117,16 +117,6 @@
 @section('content')
 
     <div class="page-title light-background" data-aos="fade">
-        <!-- <div class="heading">
-                                    <div class="container">
-                                      <div class="row d-flex justify-content-center text-center">
-                                        <div class="col-lg-8">
-                                          <h1>Hotel & Restaurants</h1>
-
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div> -->
         <nav class="breadcrumbs">
             <div class="container">
                 <ol>
@@ -140,42 +130,43 @@
     <!-- Starter Section Section -->
     <section id="starter-section" class="starter-section section" style="padding:40px">
         <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up" style="padding-bottom: 0px;">
-            @if ($service_type == 'hotel')
-                <h2>Hotel</h2>
-            @else
-                <h2>Restaurants</h2>
-            @endif
-
+        <div class="container section-title mb-5" data-aos="fade-up" style="padding-bottom: 0px;">
+                <div class="g-img">
+                    <h2 class="mb-0">{{ $wing->title }}</h2>
+                </div>
+                
         </div><!-- End Section Title -->
 
         <div class="container" data-aos="fade-up">
             <div class="row">
 
+            @foreach ($services as $service)
                 <div class="col-lg-4 mb-4 col-12 col-md-6">
                     <a href="">
                         <div class="">
                             <div class="card card-change">
                                 <div class="card-body p-0 position-relative card-container">
-                                    <img src="{{ asset('assets/user/assets/img/hotel/radisson.jpg') }}" alt=""
+                                    <img src="{{ asset('storage/'.$service->thum) }}" alt=""
                                         class="img-fluid">
                                     <!--  -->
                                     <div class="overlay"></div>
                                     <div class="position-absolute nameOfService_container">
-                                        <p class="nameOfService">Radissan</p>
+                                        <p class="nameOfService">{{ $service->name }}</p>
                                     </div>
-                                    <div class="view_detailContainer"><a href="{{ route('services.detail',['uid' => 'dkdsflsdl']) }}" class="view_detail_btn">View Detail</a>
+                                    <div class="view_detailContainer"><a href="{{ route('services.detail',['slug' => $service->slug ]) }}" class="view_detail_btn">View Detail</a>
                                     </div>
                                 </div>
                                 <div>
-                                    <h3 class="card_h3">Radissan</h3>
+                                    <a href="{{ route('services.detail',['slug' => $service->slug ]) }}"><h3 class="card_h3">{{ $service->name }}</h3></a>
                                 </div>
                             </div>
                         </div>
                     </a>
                 </div>
+            @endforeach
+                
 
-                <div class="col-lg-4 mb-4 col-12 col-md-6">
+                {{-- <div class="col-lg-4 mb-4 col-12 col-md-6">
                     <div>
                         <div class="card card-change">
                             <div class="card-body p-0 position-relative card-container">
@@ -269,7 +260,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
 
                 
             </div>

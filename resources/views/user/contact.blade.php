@@ -69,7 +69,7 @@
                 <div><i class="bi bi-geo-alt"></i></div>
                 <div class="info-width">
                   <h3 class="text-white">Address</h3>
-                  <p class="text-white">house no17 , Road no 6 , Block A , Mirpur 10</p>
+                  <p class="text-white">{{ optional($company)->address }}</p>
                 </div>
               </div>
             </div><!-- End Info Item -->
@@ -79,7 +79,7 @@
                 <div><i class="bi bi-telephone"></i></div>
                 <div class="info-width">
                   <h3 class="text-white">Call Us</h3>
-                  <p class="text-white">+1 5589 55488 55</p>
+                  <p class="text-white">{{ optional($company)->phone }}</p>
                 </div>
               </div>
             </div><!-- End Info Item -->
@@ -89,7 +89,7 @@
                 <div><i class="bi bi-envelope"></i></div>
                 <div class="info-width">
                   <h3 class="text-white">Email Us</h3>
-                  <p class="text-white">swiftslutionbd2010@gmail.com</p>
+                  <p class="text-white">{{ optional($company)->email }}</p>
                 </div>
 
               </div>
@@ -98,30 +98,38 @@
           </div>
         </div>
         <div class="col-md-6 col-lg-8">
-          <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="300">
+          <form action="{{ route('contactPage') }}" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="300">
+            @csrf
             <div class="row gy-4">
-
               <div class="col-md-6">
-                <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" placeholder="Your Name" required="">
+                @error('name')
+                  <p class="text-danger">{{ $message }}</p>
+                @enderror
               </div>
 
               <div class="col-md-6 ">
-                <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="Your Email" required="">
+                @error('email')
+                  <p class="text-danger">{{ $message }}</p>
+                @enderror
               </div>
 
               <div class="col-md-12">
-                <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                <input type="text" class="form-control @error('subject') is-invalid @enderror" name="subject" placeholder="Subject" required="">
+                @error('subject')
+                  <p class="text-danger">{{ $message }}</p>
+                @enderror
               </div>
 
               <div class="col-md-12">
-                <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                <textarea class="form-control  @error('message') is-invalid @enderror" name="message" rows="6" placeholder="Message" required=""></textarea>
+                @error('message')
+                  <p class="text-danger">{{ $message }}</p>
+                @enderror
               </div>
 
               <div class="col-md-12 text-end">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-
                 <button type="submit" class="bg-submit">Send Message</button>
               </div>
 
@@ -138,10 +146,44 @@
 
   </section><!-- /Contact Section -->
 
+
+
+  <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Success</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        @if(session('success'))
+          <p>{{ session('success') }}</p>
+        @endif
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
 @endsection
 
 @push('script')
 
+<script>
+  @if (session('success'))
+        $(document).ready(function () {
+            $('#successModal').modal('show');
+        });
+    @endif
+</script>
 
 
 

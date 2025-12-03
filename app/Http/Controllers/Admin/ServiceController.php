@@ -20,8 +20,6 @@ class ServiceController extends Controller
         }
         $wings = Wing::where('status','=','1')->latest()->get();
         $datas = Service::with('wing')->latest()->get();
-
-        // return response()->json($datas);
         return view('admin.service',compact('editItem','datas','wings'));
     }
 

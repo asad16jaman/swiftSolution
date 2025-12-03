@@ -31,24 +31,7 @@
                 </marquee>
             </div>
             <div class="col-12 col-lg-6 d-grid justify-content-end">
-                <!-- <a href="#" class="twitter"></a>
-                    <a href="#" class="linkedin"></a> -->
                 <ul class="top-socli d-flex align-items-center mb-0">
-
-                    <!-- <li class="ms-md-3 d-flex">
-                        <a target="_blank" href="" class="btn sosal-py" style="border-radius:0px;"> <i
-                                class="bi bi-facebook"></i></a>
-                        <a target="_blank" href="" class="btn sosal-py" style="border-radius:0px;">
-                            <i class="bi bi-instagram"></i>
-                        </a>
-                        <a target="_blank" href="" class="btn sosal-py" style="border-radius:0px;">
-                            <i class="bi bi-twitter-x"></i>
-                        </a>
-                        <a target="_blank" href="" class="btn sosal-py" style="border-radius:0px;">
-                            <i class="bi bi-linkedin"></i>
-                        </a>
-                    </li> -->
-
                     <li class="ms-3 d-flex py-topbar">
                         Hotline:  {{ optional($company)->phone }}
                     </li>

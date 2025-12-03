@@ -31,7 +31,6 @@
             object-fit: fill;
         }
 
-
         .headbg>tr>th {
             background-color: #3c5236;
             color: #fff;
@@ -60,7 +59,7 @@
                                             <th>Name</th>
                                             <th>Email</th>
                                             <th>Subject</th>
-                                            <th>Message</th>
+                                            <th style="width: 100.031px;">Message</th>
                                             <th>Date</th>
                                             <th>Action</th>
                                         </tr>
@@ -73,7 +72,29 @@
                                                 <td>{{ $msg->name }}</td>
                                                 <td>{{ $msg->email }}</td>
                                                 <td>{{ $msg->subject }}</td>
-                                                <td>{{ $msg->message }} </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal"
+                                                        data-bs-target="#exampleModal{{ $msg->id }}">
+                                                        View
+                                                    </button>
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="exampleModal{{ $msg->id }}" tabindex="-1"
+                                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                                                                        {{ $msg->name }}</h1>
+                                                                    <button type="button" class="btn-close"
+                                                                        data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    {!! $msg->message !!}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
                                                 <td>{{ $msg->created_at->format('d-m-Y h:ia') }}</td>
                                                 <td class="d-flex justify-content-center">
                                                     <form action="{{ route('admin.message.delete', ['id' => $msg->id]) }}"
@@ -97,45 +118,50 @@
                 </div>
             </div>
         </div>
-</div>
+    </div>
+
+
+    
 @endsection
 
-    @push('script')
-        <!-- Datatables -->
-        <script src="{{ asset('assets/admin/js/plugin/datatables/datatables.min.js') }}"></script>
-        <script>
-            $(document).on("click", ".deleteBtn", function (e) {
-                e.preventDefault();
-                let form = $(this).closest("form"); // nearest form select korbe
-                swal({
-                    title: "Are you sure?",
-                    text: "You Want To Delete",
-                    icon: "warning",
-                    buttons: {
-                        cancel: {
-                            text: "Cancel",
-                            visible: true,
-                            className: "btn btn-danger"
-                        },
-                        confirm: {
-                            text: "Yes, delete it!",
-                            className: "btn btn-success"
-                        }
+@push('script')
+    <!-- Datatables -->
+    <script src="{{ asset('assets/admin/js/plugin/datatables/datatables.min.js') }}"></script>
+    <script>
+        $(document).on("click", ".deleteBtn", function (e) {
+            e.preventDefault();
+            let form = $(this).closest("form"); // nearest form select korbe
+            swal({
+                title: "Are you sure?",
+                text: "You Want To Delete",
+                icon: "warning",
+                buttons: {
+                    cancel: {
+                        text: "Cancel",
+                        visible: true,
+                        className: "btn btn-danger"
                     },
-                    dangerMode: true,
-                }).then((willDelete) => {
-                    console.log(willDelete)
-                    if (willDelete) {
-                        form.submit(); // confirm hole form submit hobe
+                    confirm: {
+                        text: "Yes, delete it!",
+                        className: "btn btn-success"
                     }
-                });
+                },
+                dangerMode: true,
+            }).then((willDelete) => {
+                console.log(willDelete)
+                if (willDelete) {
+                    form.submit(); // confirm hole form submit hobe
+                }
             });
+        });
 
-            $(document).ready(function () {
-                $("#basic-datatables").DataTable({
-                    sort: false
-                });
-            })
-        </script>
+        $(document).ready(function () {
+            $("#basic-datatables").DataTable({
+                sort: false
+            });
+        })
 
-    @endpush
+         
+    </script>
+
+@endpush

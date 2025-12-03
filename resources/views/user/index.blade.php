@@ -68,8 +68,8 @@
     }
 
     /* .mt-md-from-5 {
-                    margin-top: 4.5rem !important;
-                  } */
+                      margin-top: 4.5rem !important;
+                    } */
 
     .form-control-sm {
       border-radius: 0px;
@@ -129,12 +129,12 @@
 
 
     /* @media screen and (max-width:1400px) {
-                    .welcome_lead {
-                      font-size: 12px;
-                      margin-bottom: 0;
-                      text-align: justify;
-                    }
-                  } */
+                      .welcome_lead {
+                        font-size: 12px;
+                        margin-bottom: 0;
+                        text-align: justify;
+                      }
+                    } */
 
     .hero img {
       position: static;
@@ -154,25 +154,21 @@
     }
 
     /* .hero_overlay{
-        width: 100%;
-      height: 100%;
-      background: #0e363e94;
-      position: absolute;
-      top: 0;
-      visibility: hidden;
-       transition: 0.35s; 
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      } */
+          width: 100%;
+        height: 100%;
+        background: #0e363e94;
+        position: absolute;
+        top: 0;
+        visibility: hidden;
+         transition: 0.35s; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        } */
+
     .m_card-1:hover .hero_overlay {
       visibility: visible;
-
     }
-
-
-
-
 
     /* Parent must be relative */
     .lll {
@@ -284,111 +280,26 @@
       <div class="row">
         <div class="col-12 col-lg-8 col-xxl-9">
           <div class="row justify-content-center py-hero">
-
-            <div class="col-xl-4 col-md-4 col-6 section-2 mb-4 d-flex justify-content-center" data-aos="fade-right"
-              data-aos-delay="100">
-              <div class="card">
-                <div class="card-body m_card-1 p-0">
-                  <div class="position-relative lll">
-                    <img src="{{ asset('assets/user/assets/img/service/hotel.webp') }}" class="service-img-height">
-                    <div class="hero_overlay">
-                      <a href="{{ route('our_services', ['type' => 'resturant']) }}" class="view_btn">View Detail</a>
+            @foreach ($wings as $wing)
+              <div
+                class="col-xl-4 col-md-4 col-6 section-2  {{ $loop->iteration < 4 ? 'mb-4' : ''  }}  {{ $loop->iteration == 4 ? 'mb-4 mb-lg-0' : ''  }} d-flex justify-content-center"
+                data-aos="fade-right" data-aos-delay="{{ ($loop->index * 2) * 100 }}">
+                  <div class="card">
+                  <div class="card-body m_card-1 p-0">
+                    <div class="position-relative lll">
+                      <img src="{{ asset('storage/' . $wing->img) }}" class="service-img-height">
+                      <div class="hero_overlay">
+                        <a href="{{ route('our_services', ['type' => $wing->nav_name ]) }}" class="view_btn">View Detail</a>
+                      </div>
+                    </div>
+                    <div>
+                     <a href="{{ route('our_services', ['type' => $wing->nav_name ]) }}"> <h4 class="heroCard_h4">{{ $wing->title }}</h4></a>
                     </div>
                   </div>
-                  <div>
-                    <h4 class="heroCard_h4">Hotel & Resort</h4>
-                  </div>
                 </div>
+              
               </div>
-            </div>
-
-            <div class="col-xl-4 col-md-4 col-6 section-2 d-flex justify-content-center mb-4" data-aos="fade-right"
-              data-aos-delay="300">
-              <div class="card">
-                <div class="card-body m_card-1 p-0">
-                  <div class="position-relative lll">
-                    <img src="{{ asset('assets/user/assets/img/service/resturant.jpg') }}" class="service-img-height">
-                    <div class="hero_overlay">
-                      <a href="{{ route('our_services', ['type' => 'resturant']) }}" class="view_btn">View Detail</a>
-                    </div>
-                  </div>
-                  <div>
-                    <h4 class="heroCard_h4">Resturant Business</h4>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-4 col-md-4 col-6 section-2 d-flex justify-content-center mb-4" data-aos="fade-right"
-              data-aos-delay="600">
-              <div class="card">
-                <div class="card-body m_card-1 p-0">
-                  <div class="position-relative lll">
-                    <img src="{{ asset('assets/user/assets/img/service/travel.jpg') }}" class="service-img-height">
-                    <div class="hero_overlay">
-                      <a href="{{ route('our_services', ['type' => 'resturant']) }}" class="view_btn">View Detail</a>
-                    </div>
-                  </div>
-                  <div>
-                    <h4 class="heroCard_h4">Travel & Tourism</h4>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-4 col-md-4 col-6 section-2 d-flex justify-content-center mb-4 mb-xl-0"
-              data-aos="fade-right" data-aos-delay="100">
-              <div class="card">
-                <div class="card-body m_card-1 p-0">
-                  <div class="position-relative lll">
-                    <img src="{{ asset('assets/user/assets/img/service/event.jpg') }}" class="service-img-height">
-                    <div class="hero_overlay">
-                      <a href="{{ route('our_services', ['type' => 'resturant']) }}" class="view_btn">View Detail</a>
-                    </div>
-                  </div>
-                  <div>
-                    <h4 class="heroCard_h4">Event Management</h4>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-4 col-md-4 col-6 section-2 d-flex justify-content-center" data-aos="fade-right"
-              data-aos-delay="300">
-              <div class="card">
-                <div class="card-body m_card-1 p-0">
-                  <div class="position-relative lll">
-                    <img src="{{ asset('assets/user/assets/img/service/delivery.png') }}" class="service-img-height">
-                    <div class="hero_overlay">
-                      <a href="{{ route('our_services', ['type' => 'resturant']) }}" class="view_btn">View Detail</a>
-                    </div>
-                  </div>
-                  <div>
-                    <h4 class="heroCard_h4">Logistics & Delivery</h4>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-4 col-md-4 col-6 section-2 d-flex justify-content-center" data-aos="fade-right"
-              data-aos-delay="600">
-              <div class="card">
-                <div class="card-body m_card-1 p-0">
-                  <div class="position-relative lll">
-                    <img src="{{ asset('assets/user/assets/img/service/tour.webp') }}" class="service-img-height">
-                    <div class="hero_overlay">
-                      <a href="{{ route('our_services', ['type' => 'resturant']) }}" class="view_btn">View Detail</a>
-                    </div>
-                  </div>
-                  <div>
-                    <h4 class="heroCard_h4">Tour Guide</h4>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
-
+            @endforeach
           </div>
         </div>
 
@@ -401,16 +312,15 @@
                   Say Hello To US
                 </h5>
                 <div class="">
-                  <form action="https://linktechbd.com/query-store" method="POST">
-                    <input type="hidden" name="_token" value="8coIaW5M8wHMTreIID0vxWirC73UNvs33UAyQdCU"> <input
-                      type="hidden" name="_method" value="POST">
+                  <form action="{{ route('sayhellow') }}" method="POST">
+                    @csrf
                     <div class="row pt-xxl-2 mt-1">
                       <div class="col-3 pe-0">
                         <label for="name" class="form-label custom-form-label text-white">Name</label>
                       </div>
                       <div class="col-9">
-                        <input type="text" value="" class="form-control form-control-sm custom-form-control " id="name"
-                          name="name" placeholder="name" required="">
+                        <input type="text" value="{{ old('name') }}" class="form-control form-control-sm custom-form-control " id="name"
+                          name="name" placeholder="name">
                       </div>
                     </div>
                     <div class="row mt-xxl-2 mt-1">
@@ -418,7 +328,7 @@
                         <label for="phone" class="form-label custom-form-label text-white">Phone</label>
                       </div>
                       <div class="col-9">
-                        <input type="text" value="" class="form-control form-control-sm custom-form-control " id="phone"
+                        <input type="text" value="{{ old('phone') }}" class="form-control form-control-sm custom-form-control " id="phone"
                           name="phone" placeholder="number" required="">
                       </div>
                     </div>
@@ -427,8 +337,8 @@
                         <label for="email" class="form-label custom-form-label text-white">Email</label>
                       </div>
                       <div class="col-9">
-                        <input type="email" value="" class="form-control form-control-sm custom-form-control " id="email"
-                          placeholder="email" name="address">
+                        <input type="email" value="{{ old('email') }}" class="form-control form-control-sm custom-form-control " id="email"
+                          placeholder="email" name="email">
                       </div>
                     </div>
 
@@ -437,7 +347,7 @@
                         <label for="company" class="form-label custom-form-label text-white">Company</label>
                       </div>
                       <div class="col-9">
-                        <input type="text" value="" class="form-control form-control-sm custom-form-control " id="company"
+                        <input type="text" value="{{ old('company') }}" class="form-control form-control-sm custom-form-control " id="company"
                           placeholder="Company Name" name="company">
                       </div>
                     </div>
@@ -447,8 +357,8 @@
                         <label for="subject" class="form-label custom-form-label text-white">Subject</label>
                       </div>
                       <div class="col-9">
-                        <input type="text" value="" class="form-control form-control-sm custom-form-control " id="subject"
-                          placeholder="subject" name="email">
+                        <input type="text" value="{{ old('subject') }}" class="form-control form-control-sm custom-form-control " id="subject"
+                          placeholder="subject" name="subject">
                       </div>
                     </div>
 
@@ -458,12 +368,11 @@
                       </div>
                       <div class="col-9">
                         <textarea type="text" class="form-control form-control-sm custom-form-control " id="message"
-                          rows="4" name="message" placeholder="write here..." value=""></textarea>
+                          rows="4" name="message" placeholder="write here...">{{ old('message') }}</textarea>
                       </div>
                     </div>
                     <div class="float-end mt-xxl-2 mt-1">
-                      <button class="btn sign-in-button card_btn">
-
+                      <button type="submit" class="btn sign-in-button card_btn">
                         Submit
                         <span class="line-bottom"></span>
                         <span class="line-left"></span>
@@ -490,8 +399,8 @@
         <div class="col-lg-4 col-md-6 col-12 d-flex">
           <div class="card home-card" data-aos="fade-right" data-aos-delay="100">
             <!-- <div class="card-header text-center">
-                    Welcome To Swift Solution
-                  </div> -->
+                      Welcome To Swift Solution
+                    </div> -->
             <div class="card-body">
               <div class="row">
 
@@ -512,12 +421,12 @@
         <div class="col-lg-4 col-md-6 col-12 d-flex">
           <div class="card home-card" data-aos="fade-down" data-aos-delay="300">
             <div class="card-header text-center header-bg">
-                    {{ optional($about)->title }}
+              {{ optional($about)->title }}
             </div>
             <div class="card-body">
               <div class="row">
                 <div class="col-5">
-                  <img src="{{ asset('storage/'.optional($about)->picture) }}"
+                  <img src="{{ asset('storage/' . optional($about)->picture) }}"
                     class="img-fluid img-thumbnail welcomeImage_height" />
                 </div>
                 <div class="col-7">
@@ -525,8 +434,8 @@
                     <div>
                       <h5 class="mb-2 f-600">{{ optional($company)->name }}</h5>
                       <p class="welcome_lead f-14">
-                        {!! substr(strip_tags(optional($about)->description),0,220) !!}
-                      
+                        {!! substr(strip_tags(optional($about)->description), 0, 220) !!}
+
                       <div class="d-flex justify-content-end mt-2">
                         <button class="btn bg-base learn-more-btn">
                           {{ optional($about)->button }}
@@ -549,7 +458,7 @@
             <div class="card-body">
               <div class="row">
                 <div class="col-12 d-flex mb-2">
-                  <img src="{{ asset('storage/'.optional($auth_message)->img) }}"
+                  <img src="{{ asset('storage/' . optional($auth_message)->img) }}"
                     class="img-fluid img-thumbnail managementImage_height" />
 
                   <div class="mb-2">
@@ -563,7 +472,7 @@
                     <div>
 
                       <p class="welcome_lead f-14">
-                        {{ substr(strip_tags(optional($auth_message)->speech),0,310) }}
+                        {{ substr(strip_tags(optional($auth_message)->speech), 0, 310) }}
                       </p>
                       <div class="d-flex justify-content-end mt-2">
                         <button class="btn bg-base learn-more-btn">
@@ -584,6 +493,60 @@
   </section>
 
 
+
+  <!-- Error Modal -->
+<div class="modal fade" id="errorModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header bg-danger text-white">
+        <h5 class="modal-title">Validation Error</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        @if ($errors->any())
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        @endif
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+ <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Success</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        @if(session('success'))
+          <p>{{ session('success') }}</p>
+        @endif
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
 @endsection
 
 @push('script')
@@ -595,6 +558,19 @@
       once: false,
       mirror: false,
     });
+
+     document.addEventListener("DOMContentLoaded", function () {
+        @if ($errors->any())
+            var myModal = new bootstrap.Modal(document.getElementById('errorModal'));
+            myModal.show();
+        @endif
+    });
+
+    @if (session('success'))
+        $(document).ready(function () {
+            $('#successModal').modal('show');
+        });
+    @endif
 
 
 
