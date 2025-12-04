@@ -8,9 +8,7 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 class Page extends Model
 {
     //
-
     protected $guarded = [];
-
     protected function description(): Attribute
     {
         return Attribute::make(

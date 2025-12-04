@@ -12,7 +12,6 @@
         .iconsize {
             font-size: 15px;
         }
-
         .profileImg {
             width: 100%;
             height: 75px;
@@ -21,31 +20,26 @@
             border-radius: 6px;
             max-width: 118px;
         }
-
         .tablepicture {
             width: 30px;
             height: 30px;
             object-fit: fill;
         }
-
         .headbg>tr>th {
             background-color: #3c5236;
             color: #fff;
             padding: 2px !important;
             margin-bottom: 2px;
         }
-
         .productimages {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
         }
-
         .preview-img {
             position: relative;
             display: inline-block;
         }
-
         .preview-img img {
             width: 70px;
             height: 70px;
@@ -53,7 +47,6 @@
             border: 1px solid #ccc;
             border-radius: 5px;
         }
-
         .preview-img .remove-btn {
             position: absolute;
             top: -5px;
@@ -306,14 +299,10 @@
                                     </tbody>
                                 </table>
                             </div>
-
-
                         </div>
                     </div>
-
                 </div>
             </div>
-
         </div>
     </div>
 @endsection
@@ -323,9 +312,6 @@
     <!-- Datatables -->
     <script src="{{ asset('assets/admin/js/plugin/datatables/datatables.min.js') }}"></script>
     <script>
-
-
-
         function previewImage(e, prevId) {
             const previewImage = document.getElementById(prevId);
             const file = e.target.files[0];
@@ -337,11 +323,6 @@
                 reader.readAsDataURL(file);
             }
         }
-
-
-
-
-
         ClassicEditor
             .create(document.querySelector('#description'), {
             })
@@ -382,10 +363,6 @@
                 sort: false
             });
         })
-
-
-
-
         function slugify(text) {
             return text
                 .toString()

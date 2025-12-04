@@ -20,8 +20,6 @@ class VideoController extends Controller
         $allgallery = VideoGallery::latest()->get();
         return view('admin.videogallery', compact('allgallery', 'editgallery'));
     }
-
-
     public function store(Request $request, ?int $id = null)
     {
         $request->validate([
@@ -49,7 +47,6 @@ class VideoController extends Controller
                 return redirect()->route('error');
             }
         }
-
         try{
             if ($request->hasFile('img')) {
                 $path = $request->file('img')->store('videogallery');
@@ -61,7 +58,6 @@ class VideoController extends Controller
             Log::error("this message is from : ".__CLASS__."Line is : ".__LINE__." messages is ".$e->getMessage());
             return redirect()->route('error');
         }
-
     }
 
     public function destory(int $id)
@@ -80,6 +76,4 @@ class VideoController extends Controller
             return redirect()->route('error');
         }
     }
-
-    
 }

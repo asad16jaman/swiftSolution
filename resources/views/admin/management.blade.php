@@ -8,11 +8,9 @@
             padding: 0px !important;
             margin-bottom: 2px;
         }
-
         .iconsize {
             font-size: 15px;
         }
-
         .profileImg {
             width: auto;
             height: 50px;
@@ -20,13 +18,11 @@
             border: 2px dashed #ccc;
             border-radius: 6px;
         }
-
         .tablepicture {
             width: 30px;
             height: 30px;
             object-fit: fill;
         }
-
         .headbg>tr>th {
             background-color: #3c5236;
             color: #fff;
@@ -77,7 +73,6 @@
                                     <p class="text-danger">{{ $message }}</p>
                                 @enderror
                             </div>
-
                             <div class="col-md-1 col-12"><label for="email2">Email :</label></div>
                             <div class="col-md-3 col-12">
 
@@ -87,11 +82,8 @@
                                 @error('email')
                                     <p class="text-danger">{{ $message }}</p>
                                 @enderror
-
                             </div>
-
                         </div>
-                        
                         <div class="row mt-2">
                             <div class="col-md-1 col-12"><label for="email2">Faceb. :</label></div>
                             <div class="col-md-3 col-12">
@@ -126,7 +118,6 @@
                                 @enderror
                             </div>
                         </div>
-
                         <div class="row mt-2">
                             <div class="col-md-1 col-12"><label for="email2">Linkd. :</label></div>
                             <div class="col-md-3 col-12">
@@ -138,7 +129,6 @@
                                     <p class="text-danger">{{ $message }}</p>
                                 @enderror
                             </div>
-
                             <div class="col-md-1 col-12"><label style="cursor: pointer;" class="me-2">Pict. :</label></div>
                             <div class="col-md-3 col-12">
                                 <input type="file" onchange="previewImagefunction(event,'previewImage')" class="form-control form-control-sm" name="photo" id="imageInput"
@@ -146,7 +136,6 @@
                                 @error('photo')
                                     <p class="text-danger text-center">{{ $message }}</p>
                                 @enderror
-                                
                             </div>
                             <div class="col-lg-3">
                                 <img id="previewImage"
@@ -228,7 +217,6 @@
 @push('script')
     <script src="{{ asset('/assets/admin/js/plugin/datatables/datatables.min.js') }}"></script>
     <script>
-        
         $(document).on("click", ".deleteBtn", function (e) {
             e.preventDefault();
             let form = $(this).closest("form"); // nearest form select korbe
@@ -255,7 +243,6 @@
                 }
             });
         });
-
         function previewImagefunction(e,previewId){
             let file = e.target.files[0];
             const imageView = document.getElementById(previewId);
@@ -267,13 +254,11 @@
                 reader.readAsDataURL(file);
             }
         }
-
         $(document).ready(function () {
             $("#basic-datatables").DataTable({
                 sort: false
             });
         })
-
     </script>
 
 

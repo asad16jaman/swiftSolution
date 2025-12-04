@@ -1,7 +1,5 @@
 @extends('user.layout.app')
-
 @section('title', 'Swift Solution | Photo Gallery Page')
-
 @push('style')
   <link href="{{ asset('assets/user/assets/css/galleryeffect.css') }}" rel="stylesheet">
   <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
@@ -13,11 +11,8 @@
     }
   </style>
 @endpush
-
 @section('content')
-
   <div class="page-title light-background" data-aos="fade">
-
     <nav class="breadcrumbs">
       <div class="container">
         <ol>
@@ -27,19 +22,13 @@
       </div>
     </nav>
   </div>
-
   <div class="container section-title mt-5 d-flex justify-content-center" data-aos="fade-up">
     <div class="g-img">
       <h2 style="margin-bottom:0px">Photo Gallery</h2>
     </div>
-
   </div><!-- End Section Title -->
-
   <div class="container section-5" data-aos="fade-up">
-
-
     <div class="row">
-
       @foreach ($photo_gallery as $gallery)
         <div class="col-lg-3 col-md-4" data-aos="fade-up" data-aos-delay="100">
           <figure class="figure w-100">
@@ -60,16 +49,11 @@
         </div>
       @endforeach
     </div>
-
   </div>
-
-
 @endsection
 
 @push('script')
-
   <script>
-
     Fancybox.bind("[data-fancybox]", {
       zoomEffect: false,
       Carousel: {
@@ -82,6 +66,5 @@
         },
       },
     });
-
   </script>
 @endpush

@@ -12,20 +12,14 @@ use Illuminate\Http\RedirectResponse;
 class DashboardController extends Controller
 {
     //
-
     public function index(){
-
         // $message =  Contact::where('created_at', '>=', Carbon::now()->subHours(24))->count();
         return view("admin.dashboard");
     }
-
-
     public function login(){
         return view("admin.login");
     }
-
     public function authenticate(Request $request){
-        // return response()->json($request->all());
          $request->validate([
             'username' => ['required'],
             'password' => ['required'],
@@ -56,13 +50,7 @@ class DashboardController extends Controller
         $request->session()->regenerateToken();
         return redirect('/admin/login');
     }
-
-
     function errorpage(){
         return view('admin.404');
     }
-    
-
-
-
 }

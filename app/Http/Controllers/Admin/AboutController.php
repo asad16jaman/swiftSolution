@@ -69,7 +69,6 @@ class AboutController extends Controller
 
     }
 
-
     public function status(Request $request , int $id){
         $page = Page::findOrFail($id);
 
@@ -78,7 +77,6 @@ class AboutController extends Controller
         $page->save();
        }
        return redirect()->route('admin.about')->with('success','Successfully Updated Status!');
-
     }
 
     public function destroy(int $id)
@@ -94,11 +92,7 @@ class AboutController extends Controller
             Log::error("this message is from : " . __CLASS__ . "Line is : " . __LINE__ . " messages is " . $e->getMessage());
             return redirect()->route('error');
         }
-
-
     }
-
-
 
 
 }

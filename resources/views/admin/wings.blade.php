@@ -8,11 +8,9 @@
             padding: 0px !important;
             margin-bottom: 2px;
         }
-
         .iconsize {
             font-size: 15px;
         }
-
         .profileImg {
             width: 100%;
             max-width: 150px;
@@ -21,13 +19,11 @@
             border: 2px dashed #ccc;
             border-radius: 6px;
         }
-
         .tablepicture {
             width: 30px;
             height: 30px;
             object-fit: fill;
         }
-
         .headbg>tr>th {
             background-color: #3c5236;
             color: #fff;
@@ -36,13 +32,10 @@
         }
     </style>
 @endsection
-
 @section('pageside')
     @include('admin.layout.sidebar', ['page' => 'wings'])
 @endsection
-
 @section('bodyContent')
-
 <div class="container">
     <div class="page-inner">
         <div class="row ">
@@ -71,7 +64,6 @@
                                         <p class="text-danger text-center">{{ $message }}</p>
                                     @enderror
                                 </div>
-                               
                                 <div class="col-md-1 col-12 g-0"><label for="" style="cursor: pointer;">Thumbnail*</label></div>
                                 <div class="col-md-2 col-12">
                                     <input type="file" class="form-control form-control-sm mb-1" name="img" id="imageInput"
@@ -81,13 +73,11 @@
                                         <p class="text-danger text-center">{{ $message }}</p>
                                     @enderror
                                 </div>
-
                                 <div class="col-md-1 col-12">
                                     <img id="previewImage"
                                         src="{{ ($editgallery && $editgallery->img) ? asset('storage/' . $editgallery->img) : asset('assets/admin/img/demoUpload.jpg') }}"
                                         alt="Demo Image" class="profileImg" style="">
                                 </div>
-                                
                             </div>
                             <div class="d-flex justify-content-end mt-2">
                                 <input type="submit" value="Submit" class="btn btn-primary me-3 p-2">
@@ -175,13 +165,9 @@
                 </div>
             </div>
         </div>
-
-
-
     </div>
 </div>
 @endsection
-
 @push('script')
     <script src="{{ asset('assets/admin/js/plugin/datatables/datatables.min.js') }}"></script>
     <script>
@@ -192,19 +178,15 @@
             const file = this.files[0];
             if (file) {
                 const reader = new FileReader();
-
                 reader.onload = function (e) {
                     previewImage.src = e.target.result;
                 };
-
                 reader.readAsDataURL(file);
             }
         })
-
         $(document).on("click", ".deleteBtn", function (e) {
             e.preventDefault();
             let form = $(this).closest("form"); // nearest form select korbe
-
             swal({
                 title: "Are you sure?",
                 text: "You Want To Delete",
@@ -234,8 +216,6 @@
                 sort: false
             });
         })
-
-
     function slugify(text) {
         return text
             .toString()
@@ -245,11 +225,9 @@
             .replace(/[^\w\-]+/g, '')    // remove special chars
             .replace(/\-\-+/g, '-');     // multiple dash → single dash
     }
-
     document.getElementById('title').addEventListener('keyup', function () {
         let title = this.value;
         document.getElementById('nav_name').value = slugify(title);
     });
     </script>
-
 @endpush

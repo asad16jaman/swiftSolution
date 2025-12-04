@@ -38,9 +38,7 @@
 @endpush
 
 @section('content')
-
   <div class="page-title light-background" data-aos="fade">
-    
     <nav class="breadcrumbs">
       <div class="container">
         <ol>
@@ -50,13 +48,11 @@
       </div>
     </nav>
   </div>
-
   <div class="container section-title mt-5 d-flex justify-content-center" style="padding-bottom:30px" data-aos="fade-up">
     <div class="g-img">
       <h2 style="margin-bottom:0px">{{ $about->title }}</h2>
     </div>
   </div><!-- End Section Title -->
-
  <section class="about-area pt-0"  data-aos="fade-up" data-aos-delay="100">
         <div class="container">
             <div class="row">
@@ -71,13 +67,10 @@
             </div>
         </div>
     </section>
-
 @endsection
 
 @push('script')
   <script>
-
     
-
   </script>
 @endpush

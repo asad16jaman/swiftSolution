@@ -115,53 +115,65 @@
                         </div>
                         <div class="card-body">
                             <form action="" method="post" class="php-email-form">
+                                @csrf
+                                <input type="text" name="serviceName" value="{{ $service->name }}" class="d-none" >
                                 <div class="row gy-4">
-
                                     <div class="col-md-12">
                                         <label for="">Name*</label>
-                                        <input type="text" name="name" class="form-control" placeholder="Your Name"
-                                            required="">
+                                        <input type="text" value="asad"  name="name" class="form-control @error('name') 'is-invalid' @enderror" placeholder="Your Name"
+                                            >
+                                        @error('name') 
+                                            <p class="text-danger">{{ $message }}</p>
+                                        @enderror
                                     </div>
 
                                     <div class="col-md-12 ">
                                         <label for="">Phone*</label>
-                                        <input type="text" class="form-control" name="phone" placeholder="Your Phone"
+                                        <input type="text" value="01755698321" class="form-control  @error('phone') 'is-invalid' @enderror" name="phone" placeholder="Your Phone"
                                             required="">
+                                         @error('phone') 
+                                            <p class="text-danger">{{ $message }}</p>
+                                        @enderror
                                     </div>
 
                                     <div class="col-md-12">
                                         <label for="">Booking Date*</label>
-                                        <input type="date" name="date" class="form-control" required="">
+                                        <input type="date" name="book_date" class="form-control  @error('book_date') 'is-invalid' @enderror" required="">
+                                         @error('book_date') 
+                                            <p class="text-danger">{{ $message }}</p>
+                                        @enderror
                                     </div>
 
                                     <div class="col-md-12 ">
                                         <label for="">Booking Time*</label>
-                                        <input type="time" class="form-control" name="time" required="">
+                                        <input type="time" class="form-control  @error('book_time') 'is-invalid' @enderror" name="book_time" required="">
+                                        @error('book_time') 
+                                            <p class="text-danger">{{ $message }}</p>
+                                        @enderror
                                     </div>
-
-
                                     <div class="col-md-12">
                                         <label for="">Number Of People*</label>
-                                        <input type="number" class="form-control" name="people"
+                                        <input type="number" value="5" class="form-control  @error('people') 'is-invalid' @enderror" name="people"
                                             placeholder="Number Of People" required="">
+                                         @error('number') 
+                                            <p class="text-danger">{{ $message }}</p>
+                                        @enderror
                                     </div>
-
                                     <div class="col-md-12">
                                         <label for="">Message</label>
-                                        <textarea class="form-control" name="message" rows="6" placeholder="If Any Message"
-                                            required=""></textarea>
+                                        <textarea class="form-control  @error('message') 'is-invalid' @enderror" name="message" rows="6" placeholder="If Any Message"
+                                            required="">dddd</textarea>
+                                         @error('message') 
+                                            <p class="text-danger">{{ $message }}</p>
+                                        @enderror
                                     </div>
-
                                     <div class="col-md-12 text-end">
                                         <button type="submit" class="bg-submit book_submiting_btn">Book Now</button>
                                     </div>
-
                                 </div>
                             </form><!-- End Contact Form -->
                         </div>
                     </div>
-
-
                 </div>
 
 
@@ -172,11 +184,42 @@
         </div>
     </section><!-- /Service Details Section -->
 
+
+<!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Success</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        @if(session('success'))
+          <p>{{ session('success') }}</p>
+        @endif
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 @endsection
 
 @push('script')
 
-
+<script>
+     @if (session('success'))
+        $(document).ready(function () {
+            $('#successModal').modal('show');
+        });
+    @endif
+</script>
 
 
 @endpush

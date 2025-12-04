@@ -8,11 +8,9 @@
             padding: 0px !important;
             margin-bottom: 2px;
         }
-
         .iconsize {
             font-size: 15px;
         }
-
         .profileImg {
             width: 150px;
             height: 100px;
@@ -20,13 +18,11 @@
             /* border: 2px dashed #ccc; */
             border-radius: 6px;
         }
-
         .tablepicture {
             width: 30px;
             height: 30px;
             object-fit: fill;
         }
-
         .headbg>tr>th {
             background-color: #3c5236;
             color: #fff;
@@ -90,11 +86,9 @@
                                                 src="{{ $editfeedback ? asset('storage/' . $editfeedback->img) : asset('assets/admin/img/demoUpload.jpg') }}"
                                                 alt="Demo Image" class="profileImg" style="">
                                         </label>
-
                                         <!-- hidden input -->
                                         <input type="file" name="img" id="imageInput" name="image" accept="image/*"
                                             style="display: none;">
-                                        
                                     </div>
                                     <p class="text-danger text-center" style="font-size:12px;margin-bottom:0px;margin-top:5px">JPG/JPEG/PNG . Ratio:3/2</p>
                                     @error('img')
@@ -103,7 +97,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="d-flex justify-content-end">
                             <input type="submit" value="Submit" class="btn btn-primary me-3 p-1">
                         </div>
@@ -122,14 +115,12 @@
                                     <div class="row">
                                         <div class="col-sm-12 col-md-6">
                                             <div class="dataTables_length" id="basic-datatables_length">
-
                                             </div>
                                         </div>
                                         <div class="col-sm-12 col-md-6">
                                             <div id="basic-datatables_filter" class="dataTables_filter">
                                                 <label class="d-flex justify-content-end">Search:
                                                     <form id="searchform">
-
                                                         <input type="search" value="{{ request()->query('search') }}"
                                                             name="search" class="form-control form-control-sm"
                                                             placeholder="" aria-controls="basic-datatables">
@@ -153,7 +144,6 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-
                                                     @forelse($allfeedback as $item)
                                                         <tr role="row" class="odd">
                                                             <td class="sorting_1">{{ $loop->iteration }}</td>
@@ -163,10 +153,7 @@
                                                                     alt="Image Not Found">
                                                             </td>
                                                             <td>{{ $item->name}}</td>
-                                                            
                                                             <td>{{ substr($item->note, 0, 30) }}...</td>
-
-
                                                             <td class="d-flex justify-content-center">
                                                                 <a href="{{ route('admin.feedback' ,['id'=>$item->id,'page'=>request()->query('page'),'search'=>request()->query('search')]) }}"
                                                                     class="btn btn-info p-1 me-1">
@@ -184,30 +171,20 @@
                                                         </tr>
                                                     @empty
                                                         <p>there is no Feedback</p>
-
                                                     @endforelse
-
-
-
                                                 </tbody>
                                             </table>
                                         </div>
                                     </div>
-                                    
-
-
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
 </div>
 @endsection
-
     @push('script')
         <script>
             const imageInput = document.getElementById('imageInput');
@@ -220,7 +197,6 @@
                     reader.onload = function (e) {
                         previewImage.src = e.target.result;
                     };
-
                     reader.readAsDataURL(file);
                 }
             })
@@ -228,7 +204,6 @@
             $(document).on("click", ".deleteBtn", function (e) {
                 e.preventDefault();
                 let form = $(this).closest("form"); // nearest form select korbe
-
                 swal({
                     title: "Are you sure?",
                     text: "You Want To Delete",
@@ -252,7 +227,6 @@
                     }
                 });
             });
-           
         </script>
 
     @endpush

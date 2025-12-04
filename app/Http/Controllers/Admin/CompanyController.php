@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
 use Exception;
 use App\Models\Company;
 use Illuminate\Http\Request;
@@ -12,14 +11,11 @@ use Illuminate\Support\Facades\Storage;
 class CompanyController extends Controller
 {
     //
-
-
     public function index()
     {
         $company = Company::all()->first();
         return view("admin.company", compact("company"));
     }
-
     // |regex:/^01[3-9][0-9]{8}$/
     public function create(Request $request)
     {
@@ -51,12 +47,7 @@ class CompanyController extends Controller
 
             ],
         ];
-        
-        $request->validate($validationRules, [
-            // 'linkdin' => 'The WeChat field must be a valid URL.',
-            // 'instagram' => 'The WhatsApp field must be a valid URL.',
-        ]);
-
+        $request->validate($validationRules);
         $company = Company::first();
         $companyData = $request->only([
             'name',
@@ -76,30 +67,24 @@ class CompanyController extends Controller
                 if ($request->hasFile('logo') && $company->logo != null) {
                     Storage::delete($company->logo);
                 }
-
                 if ($request->hasFile('logo')) {
                     $path = $request->file('logo')->store('company');
                     $companyData['logo'] = $path;
                 }
-
                  if ($request->hasFile('favicon') && $company->favicon != null) {
                     Storage::delete($company->favicon);
                 }
-
                 if ($request->hasFile('favicon')) {
                     $path = $request->file('favicon')->store('company');
                     $companyData['favicon'] = $path;
                 }
-
                  if ($request->hasFile('breadcrumb') && $company->breadcrumb != null) {
                     Storage::delete($company->breadcrumb);
                 }
-
                 if ($request->hasFile('breadcrumb')) {
                     $path = $request->file('breadcrumb')->store('company');
                     $companyData['breadcrumb'] = $path;
                 }
-
                 Company::where('id', '=', $company->id)->update($companyData);
 
             } else {
@@ -107,18 +92,12 @@ class CompanyController extends Controller
                     $path = $request->file('logo')->store('company');
                     $companyData['logo'] = $path;
                 }
-
                 Company::create($companyData);
             }
             return back()->with('success', 'Successfully stored company detail');
-
         } catch (Exception $e) {
             Log::error("this message is from : " . __CLASS__ . "Line is : " . __LINE__ . " messages is " . $e->getMessage());
             return redirect()->route('error');
         }
-
     }
-
-
-
 }

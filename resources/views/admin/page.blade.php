@@ -132,7 +132,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="d-flex justify-content-end">
                                     <input type="submit" value="Submit" class="btn btn-primary me-3 p-2">
                                 </div>
@@ -228,7 +227,7 @@
                                                 </td>
                                             </tr>
                                         @empty
-                                            <p>there is no Message</p>
+                                            <p>there is no Page</p>
                                         @endforelse
                                     </tbody>
                                 </table>

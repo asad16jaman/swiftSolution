@@ -1,7 +1,5 @@
 @extends('user.layout.app')
-
 @section('title', 'Swift Solution | Home Page')
-
 @push('style')
   <link href="{{ asset('assets/user/assets/css/galleryeffect.css') }}" rel="stylesheet">
   <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
@@ -10,36 +8,28 @@
     .mt-70 {
       margin-top: 70px !important;
     }
-
     .text-justify {
       text-align: justify;
     }
-
     .weight-900 {
       font-weight: 900;
     }
-
     .weight-700 {
       font-weight: 700;
     }
-
     .img-fluid {
       width: 100% !important;
       height: 100% !important;
     }
-
     .pt-0 {
       margin-top: 0px;
     }
-
     .home-card {
       border: 0;
       box-shadow: 1px 2px 8px #000000bf;
     }
-
     .sign-in-button:hover {
       color: #fff;
-
     }
   </style>
   <style>
@@ -67,10 +57,6 @@
       border: 1px solid #0e363e;
     }
 
-    /* .mt-md-from-5 {
-                      margin-top: 4.5rem !important;
-                    } */
-
     .form-control-sm {
       border-radius: 0px;
     }
@@ -83,7 +69,6 @@
     }
 
     .welcome_lead {
-
       margin-bottom: 0;
       text-align: justify;
     }
@@ -114,7 +99,6 @@
       height: 75px !important;
       width: 75px !important;
       margin-right: 20px;
-
     }
 
     .header-bg {
@@ -125,16 +109,6 @@
     .card {
       width: 100%;
     }
-
-
-
-    /* @media screen and (max-width:1400px) {
-                      .welcome_lead {
-                        font-size: 12px;
-                        margin-bottom: 0;
-                        text-align: justify;
-                      }
-                    } */
 
     .hero img {
       position: static;
@@ -152,19 +126,6 @@
       margin: 5px 0px;
       font-size: 18px;
     }
-
-    /* .hero_overlay{
-          width: 100%;
-        height: 100%;
-        background: #0e363e94;
-        position: absolute;
-        top: 0;
-        visibility: hidden;
-         transition: 0.35s; 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        } */
 
     .m_card-1:hover .hero_overlay {
       visibility: visible;
@@ -218,8 +179,6 @@
       font-size: 14px;
     }
 
-
-
     @media screen and (max-width:1400px) {
       .welcome_lead {
         font-size: 12px;
@@ -263,19 +222,14 @@
       }
     }
   </style>
-
 @endpush
-
 @section('content')
   <!-- Hero Section -->
-
   <section id="hero" class="hero section dark-background">
     <!-- <img src="{{ asset('assets/user/assets/img/giphy.gif') }}" alt=""> -->
-
     <video width="100%" height="100%" autoplay loop muted playsinline>
       <source src="{{ asset('assets/user/assets/img/hero_v1.mp4') }}" type="video/mp4">
     </video>
-
     <div class="container section-1">
       <div class="row">
         <div class="col-12 col-lg-8 col-xxl-9">
@@ -284,25 +238,26 @@
               <div
                 class="col-xl-4 col-md-4 col-6 section-2  {{ $loop->iteration < 4 ? 'mb-4' : ''  }}  {{ $loop->iteration == 4 ? 'mb-4 mb-lg-0' : ''  }} d-flex justify-content-center"
                 data-aos="fade-right" data-aos-delay="{{ ($loop->index * 2) * 100 }}">
-                  <div class="card">
+                <div class="card">
                   <div class="card-body m_card-1 p-0">
                     <div class="position-relative lll">
                       <img src="{{ asset('storage/' . $wing->img) }}" class="service-img-height">
                       <div class="hero_overlay">
-                        <a href="{{ route('our_services', ['type' => $wing->nav_name ]) }}" class="view_btn">View Detail</a>
+                        <a href="{{ route('our_services', ['type' => $wing->nav_name]) }}" class="view_btn">View Detail</a>
                       </div>
                     </div>
                     <div>
-                     <a href="{{ route('our_services', ['type' => $wing->nav_name ]) }}"> <h4 class="heroCard_h4">{{ $wing->title }}</h4></a>
+                      <a href="{{ route('our_services', ['type' => $wing->nav_name]) }}">
+                        <h4 class="heroCard_h4">{{ $wing->title }}</h4>
+                      </a>
                     </div>
                   </div>
                 </div>
-              
+
               </div>
             @endforeach
           </div>
         </div>
-
         <div class="col-12 col-lg-4 col-xxl-3 mb-5 mb-lg-0" data-aos="fade-left" data-aos-delay="1100">
           <div class="d-flex align-items-center h-100">
             <div class="card border border-white" style="background-color: #0f4e8147;border-radius:12px;width:100%">
@@ -319,8 +274,9 @@
                         <label for="name" class="form-label custom-form-label text-white">Name</label>
                       </div>
                       <div class="col-9">
-                        <input type="text" value="{{ old('name') }}" class="form-control form-control-sm custom-form-control " id="name"
-                          name="name" placeholder="name">
+                        <input type="text" value="{{ old('name') }}"
+                          class="form-control form-control-sm custom-form-control " id="name" name="name"
+                          placeholder="name">
                       </div>
                     </div>
                     <div class="row mt-xxl-2 mt-1">
@@ -328,8 +284,9 @@
                         <label for="phone" class="form-label custom-form-label text-white">Phone</label>
                       </div>
                       <div class="col-9">
-                        <input type="text" value="{{ old('phone') }}" class="form-control form-control-sm custom-form-control " id="phone"
-                          name="phone" placeholder="number" required="">
+                        <input type="text" value="{{ old('phone') }}"
+                          class="form-control form-control-sm custom-form-control " id="phone" name="phone"
+                          placeholder="number" required="">
                       </div>
                     </div>
                     <div class="row mt-xxl-2 mt-1">
@@ -337,31 +294,31 @@
                         <label for="email" class="form-label custom-form-label text-white">Email</label>
                       </div>
                       <div class="col-9">
-                        <input type="email" value="{{ old('email') }}" class="form-control form-control-sm custom-form-control " id="email"
-                          placeholder="email" name="email">
+                        <input type="email" value="{{ old('email') }}"
+                          class="form-control form-control-sm custom-form-control " id="email" placeholder="email"
+                          name="email">
                       </div>
                     </div>
-
                     <div class="row mt-xxl-2 mt-1">
                       <div class="col-3 pe-0">
                         <label for="company" class="form-label custom-form-label text-white">Company</label>
                       </div>
                       <div class="col-9">
-                        <input type="text" value="{{ old('company') }}" class="form-control form-control-sm custom-form-control " id="company"
+                        <input type="text" value="{{ old('company') }}"
+                          class="form-control form-control-sm custom-form-control " id="company"
                           placeholder="Company Name" name="company">
                       </div>
                     </div>
-
                     <div class="row mt-xxl-2 mt-1">
                       <div class="col-3 pe-0">
                         <label for="subject" class="form-label custom-form-label text-white">Subject</label>
                       </div>
                       <div class="col-9">
-                        <input type="text" value="{{ old('subject') }}" class="form-control form-control-sm custom-form-control " id="subject"
-                          placeholder="subject" name="subject">
+                        <input type="text" value="{{ old('subject') }}"
+                          class="form-control form-control-sm custom-form-control " id="subject" placeholder="subject"
+                          name="subject">
                       </div>
                     </div>
-
                     <div class="row mt-xxl-2 mt-1">
                       <div class="col-3 pe-0">
                         <label for="message" class="form-label custom-form-label text-white">Message</label>
@@ -384,13 +341,10 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
-
   <!-- /Hero Section -->
-
   <!-- About Section -->
   <section id="about" class="about section diagonal-section">
     <div class="container section-6 py-5">
@@ -399,8 +353,8 @@
         <div class="col-lg-4 col-md-6 col-12 d-flex">
           <div class="card home-card" data-aos="fade-right" data-aos-delay="100">
             <!-- <div class="card-header text-center">
-                      Welcome To Swift Solution
-                    </div> -->
+                        Welcome To Swift Solution
+                      </div> -->
             <div class="card-body">
               <div class="row">
 
@@ -491,88 +445,67 @@
 
     </div>
   </section>
-
-
-
   <!-- Error Modal -->
-<div class="modal fade" id="errorModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-
-      <div class="modal-header bg-danger text-white">
-        <h5 class="modal-title">Validation Error</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-
-      <div class="modal-body">
-        @if ($errors->any())
+  <div class="modal fade" id="errorModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-danger text-white">
+          <h5 class="modal-title">Validation Error</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          @if ($errors->any())
             <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
+              @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+              @endforeach
             </ul>
-        @endif
+          @endif
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
       </div>
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-      </div>
-
     </div>
   </div>
-</div>
-
- <!-- Success Modal -->
-    <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-
-      <div class="modal-header">
-        <h5 class="modal-title">Success</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+  <!-- Success Modal -->
+  <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Success</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          @if(session('success'))
+            <p>{{ session('success') }}</p>
+          @endif
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+        </div>
       </div>
-
-      <div class="modal-body">
-        @if(session('success'))
-          <p>{{ session('success') }}</p>
-        @endif
-      </div>
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
-      </div>
-
     </div>
   </div>
-</div>
-
-
 @endsection
-
 @push('script')
   <script>
-
     AOS.init({
       duration: 1000,
       easing: 'ease-in-out',
       once: false,
       mirror: false,
     });
-
-     document.addEventListener("DOMContentLoaded", function () {
-        @if ($errors->any())
-            var myModal = new bootstrap.Modal(document.getElementById('errorModal'));
-            myModal.show();
-        @endif
-    });
-
+    document.addEventListener("DOMContentLoaded", function () {
+      @if ($errors->any())
+        var myModal = new bootstrap.Modal(document.getElementById('errorModal'));
+        myModal.show();
+      @endif
+      });
     @if (session('success'))
-        $(document).ready(function () {
-            $('#successModal').modal('show');
-        });
+      $(document).ready(function () {
+        $('#successModal').modal('show');
+      });
     @endif
-
-
-
   </script>
 @endpush

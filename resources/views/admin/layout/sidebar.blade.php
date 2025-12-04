@@ -161,6 +161,14 @@
                   <p>Contact</p>
                 </a>
               </li>
+
+              <li class="nav-item {{ ($page=='book') ? 'active' : '' }}">
+                <a href="{{ route('admin.book') }}">
+                  <i class="fas fa-envelope"></i>
+                  <p>Service Book</p>
+                </a>
+              </li>
+
               <li class="nav-item {{ ($page=='about') ? 'active' : '' }}">
                 <a href="{{ route('admin.about') }}">
                  <i class="fa fa-file-alt"></i>

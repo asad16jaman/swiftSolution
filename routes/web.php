@@ -1,7 +1,4 @@
 <?php
-
-
-
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -25,6 +22,7 @@ Route::post('/', [HomeController::class, 'styHellow'])->name('sayhellow');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/services/{type}', [HomeController::class, 'ourservice'])->name('our_services');
 Route::get('/service/{slug}/detail', [HomeController::class, 'serviceDetail'])->name('services.detail');
+Route::post('/service/{slug}/detail', [HomeController::class, 'serviceBook'])->name('services.detail');
 Route::get('/teams', [HomeController::class, 'teams'])->name('our_management');
 Route::get('/photo-gallery', [HomeController::class, 'photoGallery'])->name('photoGallery');
 Route::get('/video-gallery', [HomeController::class, 'videoGallery'])->name('videoGallery');
@@ -64,10 +62,6 @@ Route::group(['prefix' => '/admin', 'middleware' => 'checkAdminAuth', 'as' => 'a
     Route::post("/sliders/{id}/delete", [SliderController::class, "destroy"])->name("slider.delete");
     Route::post("/sliders/{id}/status", [SliderController::class, "status"])->name("slider.status");
 
-    //Wellcome Node url hare
-    // Route::get('/create-wellcome-node',[WellcomeController::class,'index'])->name('wellcome');
-    // Route::post('/create-wellcome-node',[WellcomeController::class,'store'])->name('wellcome');
-
     //chairman-message
     Route::get('/chairman-message', [AuthMessageController::class, 'index'])->name('ch-message');
     Route::post('/chairman-message', [AuthMessageController::class, 'store'])->name('ch-message');
@@ -104,8 +98,6 @@ Route::group(['prefix' => '/admin', 'middleware' => 'checkAdminAuth', 'as' => 'a
     Route::post('/inhome/{id}', [WingsController::class, "homeActive"])->name('homeactive');
     Route::post('/wings-status/{id}', [WingsController::class, "status"])->name('winstatus');
 
-
-
     //Managment url hare
     Route::get('/manage/{id?}', [ManagemenController::class, 'index'])->name('management');
     Route::post('/manage/{id?}', [ManagemenController::class, 'store'])->name('management');
@@ -114,6 +106,10 @@ Route::group(['prefix' => '/admin', 'middleware' => 'checkAdminAuth', 'as' => 'a
     //Contact url hare
     Route::get('/contact', [ContactController::class, 'index'])->name('message');
     Route::post('/contact/{id}', [ContactController::class, 'destroy'])->name('message.delete');
+
+    //Contact url hare
+    Route::get('/book', [ContactController::class, 'book'])->name('book');
+    Route::post('/book/{id}', [ContactController::class, 'bookdestroy'])->name('book.delete');
 
     //feedback maintaining url
     Route::get("/feedback/{id?}", [FeedbackController::class, "index"])->name("feedback");

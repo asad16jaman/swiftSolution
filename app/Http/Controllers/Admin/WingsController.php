@@ -20,8 +20,6 @@ class WingsController extends Controller
         $allgallery = Wing::latest()->get();
         return view('admin.wings', compact('allgallery', 'editgallery'));
     }
-
-
     public function store(Request $request, ?int $id = null)
     {
         $request->validate([
@@ -49,7 +47,6 @@ class WingsController extends Controller
                 return redirect()->route('error');
             }
         }
-
         try{
             if ($request->hasFile('img')) {
                 $path = $request->file('img')->store('wings');
@@ -61,7 +58,6 @@ class WingsController extends Controller
             Log::error("this message is from : ".__CLASS__."Line is : ".__LINE__." messages is ".$e->getMessage());
             return redirect()->route('error');
         }
-
     }
 
     public function destory(int $id)
@@ -106,7 +102,4 @@ class WingsController extends Controller
         }
         return redirect()->route('admin.wings')->with('success',"Successfully Updated!");
     }
-
-
-
 }

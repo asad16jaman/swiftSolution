@@ -1,9 +1,9 @@
 @extends('admin.layout.app')
 
-@section('title', 'Contact Message Page')
+@section('title', 'Service Booking Page')
 
 @section('pageside')
-    @include('admin.layout.sidebar', ['page' => 'contact'])
+    @include('admin.layout.sidebar', ['page' => 'book'])
 @endsection
 
 @section('style')
@@ -56,11 +56,12 @@
                                     <thead class="headbg">
                                         <tr role="row bg-dark">
                                             <th style="width: 136.031px;">SL NO:</th>
+                                            <th >Service Nmae</th>
                                             <th>Name</th>
-                                            <th>Email</th>
                                             <th>Phone</th>
-                                            <th>Company Name</th>
-                                            <th>Subject</th>
+                                            <th>People</th>
+                                            <!-- <th>Date</th> -->
+                                            <!-- <th>Time</th> -->
                                             <th style="width: 100.031px;">Message</th>
                                             <th>Date</th>
                                             <th>Action</th>
@@ -71,11 +72,12 @@
                                         @forelse($message as $msg)
                                             <tr role="row" class="odd">
                                                 <td class="sorting_1">{{ $loop->iteration }}</td>
+                                                <td>{{ $msg->serviceName }}</td>
                                                 <td>{{ $msg->name }}</td>
-                                                <td>{{ $msg->email ?? "Not Found" }}</td>
                                                 <td>{{ $msg->phone ?? "Not Found" }}</td>
-                                                <td>{{ $msg->company ?? "Not Found" }}</td>
-                                                <td>{{ $msg->subject }}</td>
+                                                <td>{{ $msg->people ?? "Not Found" }}</td>
+                                                {{-- <td>{{ $msg->book_date ?? "Not Found" }}</td>
+                                                <td>{{ $msg->book_time ?? "Not Found" }}</td> --}}
                                                 <td>
                                                     <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal"
                                                         data-bs-target="#exampleModal{{ $msg->id }}">
@@ -93,7 +95,12 @@
                                                                         data-bs-dismiss="modal" aria-label="Close"></button>
                                                                 </div>
                                                                 <div class="modal-body">
-                                                                    {!! $msg->message !!}
+                                                                    <div>
+                                                                        <p>Book Date : {{ $msg->book_date }}</p>
+                                                                        <p>Book Time : {{ $msg->book_time }}</p>
+                                                                    </div>
+                                                                    <h3>Message : </h3>
+                                                                    <p>{!! $msg->message !!}</p>
                                                                 </div>
                                                             </div>
                                                         </div>

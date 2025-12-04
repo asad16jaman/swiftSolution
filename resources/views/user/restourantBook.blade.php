@@ -1,7 +1,5 @@
 @extends('user.layout.app')
-
 @section('title', 'Home Page')
-
 @push('style')
   <style>
     .service-shadow {
@@ -38,7 +36,6 @@
 @endpush
 
 @section('content')
-
   <div class="page-title light-background" data-aos="fade">
     <nav class="breadcrumbs">
       <div class="container">
@@ -49,20 +46,15 @@
       </div>
     </nav>
   </div>
-
   <!-- Starter Section Section -->
-
   <section id="contact" class="contact section">
-
     <!-- Section Title -->
     <div class="container section-title d-flex justify-content-center" data-aos="fade-up">
       <div class="g-img">
         <h2>Restourant Book Page</h2>
       </div>
-
     </div>
     <!-- End Section Title -->
-
     <div class="container" data-aos="fade-up" data-aos-delay="100">
       <div class="row">
         <div class="col-md-6 col-lg-4">
@@ -89,7 +81,6 @@
 
           </div>
         </div>
-
         <div class="col-md-6 col-lg-8">
           <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="300">
             <div class="row gy-4">
@@ -137,15 +128,8 @@
           </form><!-- End Contact Form -->
         </div>
       </div>
-
-
-
-
-
     </div>
-
   </section><!-- /Contact Section -->
-
 @endsection
 
 @push('script')

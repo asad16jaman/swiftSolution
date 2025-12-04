@@ -4,10 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Wing extends Model
+class Book extends Model
 {
     //
-    protected $guarded = [] ;
-
+    protected $guarded = [];
     
 }

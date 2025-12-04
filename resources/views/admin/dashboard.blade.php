@@ -1,7 +1,5 @@
 @extends('admin.layout.app')
-
 @section('title', 'Admin Page')
-
 @section('pageside')
   @include('admin.layout.sidebar',['page' => 'home'])
 @endsection
@@ -14,11 +12,8 @@
     }
   </style>
 @endsection
-
 @section('bodyContent')
-
 <div class="container">
-
           <div class="page-inner">
             <div class="d-flex align-items-center justify-content-center align-items-md-center flex-column flex-md-row pt-2 pb-4">
               <div >
@@ -28,7 +23,6 @@
                   </div>
                 </div>
                 <h3 class="fw-bold mb-3 text-center">{{ optional($company)->name }}</h3>
-              
               </div>
             </div>
             <div class="row">
@@ -42,7 +36,6 @@
                         </div>
                     </a>
                 </div>
-
                 <div class="col-xl-3 col-md-6">
                     <a href="{{ route('admin.service') }}">
                         <div class="card" style="background:#fffbeb">
@@ -53,7 +46,6 @@
                         </div>
                     </a>
                 </div>
-
                 <div class="col-xl-3 col-md-6">
                     <a href="{{ route('admin.wings') }}">
                         <div class="card" style="background:#f5f3ff">
@@ -64,7 +56,6 @@
                         </div>
                     </a>
                 </div>
-
                 <div class="col-xl-3 col-md-6">
                     <a href="{{ route('admin.management') }}">
                         <div class="card" style="background:#fdf2f8	">
@@ -76,7 +67,6 @@
                         </div>
                     </a>
                 </div>
-
                 <div class="col-xl-3 col-md-6">
                     <a href="{{ route('admin.photogallery') }}">
                         <div class="card" style="background: #f0fdfa">
@@ -87,7 +77,6 @@
                         </div>
                     </a>
                 </div>
-
                 <div class="col-xl-3 col-md-6">
                     <a href="{{ route('admin.videogallery') }}">
                         <div class="card" style="background:#f0fdf4	">
@@ -98,7 +87,6 @@
                         </div>
                     </a>
                 </div>
-
                 <div class="col-xl-3 col-md-6">
                     <a href="{{ route('admin.message') }}">
                         <div class="card" style="background:#eef2ff	">
@@ -109,7 +97,6 @@
                         </div>
                     </a>
                 </div>
-
                 <div class="col-xl-3 col-md-6">
                     <a href="{{ route('admin.logout') }}">
                         <div class="card" style="background:#f9d4d4	">
@@ -123,7 +110,6 @@
             </div>
           </div>
         </div>
-
 @endsection
 
 

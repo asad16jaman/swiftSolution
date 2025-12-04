@@ -12,7 +12,6 @@
       href="{{ asset('assets/admin/img/kaiadmin/favicon.ico') }}"
       type="image/x-icon"
     />
-
     <!-- Fonts and icons -->
     <script src="{{ asset('assets/admin/js/plugin/webfont/webfont.min.js') }}"></script>
     <script>

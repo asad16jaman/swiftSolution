@@ -8,11 +8,9 @@
             padding: 0px !important;
             margin-bottom: 2px;
         }
-
         .iconsize {
             font-size: 15px;
         }
-
         .profileImg {
             width: 150px;
             height: 100px;
@@ -20,13 +18,11 @@
             /* border: 2px dashed #ccc; */
             border-radius: 6px;
         }
-
         .tablepicture {
             width: 30px;
             height: 30px;
             object-fit: fill;
         }
-
         .headbg>tr>th {
             background-color: #3c5236;
             color: #fff;
@@ -41,11 +37,8 @@
 @endsection
 
 @section('bodyContent')
-
     <div class="container">
-
         <div class="page-inner">
-
             <div class="card mb-1">
                 <div class="card-header pt-1 pb-0">
                     <h6 class="text-center">Create Slider</h6>
@@ -70,7 +63,6 @@
                                         @enderror
                                     </div>
                                 </div>
-
                                 <div class="row mb-2">
                                     <div class="col-md-3 col-12">
                                         <div class="">
@@ -233,20 +225,15 @@
             const file = this.files[0];
             if (file) {
                 const reader = new FileReader();
-
                 reader.onload = function (e) {
                     previewImage.src = e.target.result;
                 };
-
                 reader.readAsDataURL(file);
             }
         })
-
-
         $(document).on("click", ".deleteBtn", function (e) {
             e.preventDefault();
             let form = $(this).closest("form"); // nearest form select korbe
-
             swal({
                 title: "Are you sure?",
                 text: "You Want To Delete",

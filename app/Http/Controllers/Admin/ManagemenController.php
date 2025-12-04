@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Storage;
 
 class ManagemenController extends Controller
 {
-     public function index(Request $request, ?int $id = null)
+    public function index(Request $request, ?int $id = null)
     {
         $editTeam = null;
         if ($id != null) {
@@ -20,20 +20,20 @@ class ManagemenController extends Controller
         $allteam = Management::latest()->get();
         return view('admin.management', compact('allteam', 'editTeam'));
     }
-
     public function store(Request $request, ?int $id = null)
     {
-        $validaterules= [
-            'name'=> 'required',
-            'designation'=> 'required',
+        $validaterules = [
+            'name' => 'required',
+            'designation' => 'required',
         ];
         if ($id == null || $request->hasFile('photo')) {
             $validaterules['photo'] = "required|image|mimes:jpeg,jpg,png,gif,webp,svg";
-        };
+        }
+        ;
         $request->validate($validaterules);
-        $data = $request->only(['name', 'designation','email','facebook_url','instagram_url','twitter_url','	linkedin_url']);
+        $data = $request->only(['name', 'designation', 'email', 'facebook_url', 'instagram_url', 'twitter_url', '	linkedin_url']);
         if ($id != null) {
-            try{
+            try {
                 //user edit section is hare
                 $currentEditUser = Management::findOrFail($id);
                 if ($request->hasFile('photo')) {
@@ -45,13 +45,13 @@ class ManagemenController extends Controller
                     $data['photo'] = $path;
                 }
                 Management::where('id', '=', $id)->update($data);
-                return redirect()->route('admin.management',['page'=>$request->query('page'),'search'=>$request->query('search')])->with("success", "Successfully Edit");
-            }catch (Exception $e){
-                Log::error("this message is from : ".__CLASS__."Line is : ".__LINE__." messages is ".$e->getMessage());
+                return redirect()->route('admin.management', ['page' => $request->query('page'), 'search' => $request->query('search')])->with("success", "Successfully Edit");
+            } catch (Exception $e) {
+                Log::error("this message is from : " . __CLASS__ . "Line is : " . __LINE__ . " messages is " . $e->getMessage());
                 return redirect()->route('error');
             }
         }
-        try{
+        try {
             if ($request->hasFile('photo')) {
                 $path = $request->file('photo')->store('team');
                 $data['photo'] = $path;
@@ -60,29 +60,27 @@ class ManagemenController extends Controller
             Log::info($data);
             Management::create($data);
             return back()->with("success", "Successfully added");
-        }catch(Exception $e){
-            Log::error("this message is from : ".__CLASS__."Line is : ".__LINE__." messages is ".$e->getMessage());
+        } catch (Exception $e) {
+            Log::error("this message is from : " . __CLASS__ . "Line is : " . __LINE__ . " messages is " . $e->getMessage());
             return redirect()->route('error');
         }
     }
 
     public function destroy(int $id)
     {
-        try{
+        try {
             $data = Management::find($id);
             if ($data) {
                 //unlink image from directory....
-                if($data->photo != null) {
+                if ($data->photo != null) {
                     Storage::delete($data->photo);
                 }
                 $data->delete();
             }
             return redirect()->route('admin.management')->with('success', 'Successfully Delete');
-        }catch(Exception $e){
-            Log::error("this message is from : ".__CLASS__."Line is : ".__LINE__." messages is ".$e->getMessage());
+        } catch (Exception $e) {
+            Log::error("this message is from : " . __CLASS__ . "Line is : " . __LINE__ . " messages is " . $e->getMessage());
             return redirect()->route('error');
         }
     }
-
-
 }

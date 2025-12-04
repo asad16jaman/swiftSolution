@@ -12,25 +12,20 @@ use Illuminate\Support\Facades\Storage;
 class FeedbackController extends Controller
 {
     //
-
-
     public function index(Request $request, ?int $id = null)
     {
         $editfeedback = null;
         if ($id != null) {
             $editfeedback = Feedback::findOrFail($id);
         }
-        
         $search = $request->input('search', null);
         if ($search) {
             $allfeedback = Feedback::where('note', 'like', '%' . $search . '%')->orderBy('id', 'desc')->get();
         } else {
             $allfeedback = Feedback::orderBy('id', 'desc')->get();
         }
-        // return response()->json($allfeedback);
         return view("admin.feedback", compact("editfeedback", "allfeedback"));
     }
-
     public function store(Request $request, ?int $id = null)
     {
         $validaterules = [
@@ -40,7 +35,6 @@ class FeedbackController extends Controller
         ];
         $request->validate($validaterules);
         $data = $request->only(['name','note']);
-
         if ($id != null) {
             try{
                 $feedback = Feedback::findOrFail($id);
@@ -59,11 +53,8 @@ class FeedbackController extends Controller
             }catch(\Exception $e){
                 Log::error("Error is comeing from SlideController Storage method");
                 return redirect()->route('error');
-
             }
-            
         }
-
         try{
             if ($request->hasFile('img')) {
                     $path = $request->file('img')->store('feedbackUser');
@@ -75,21 +66,15 @@ class FeedbackController extends Controller
         }catch(\Exception $e){
                 Log::error("Error is commin from SlideController Storage method message :".$e->getMessage());
                 return redirect()->route('error');
-
         }
-        
     }
-
     public function destroy(int $id)
     {
-
         $feedback = Feedback::findOrFail($id);
         if ($feedback->img != null) {
             Storage::delete($feedback->img);
         }
         $feedback->delete();
         return redirect()->route('admin.feedback')->with('success', 'Successfully Deleted Feedback');
-
     }
-
 }

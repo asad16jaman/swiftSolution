@@ -1,7 +1,5 @@
 @extends('user.layout.app')
-
 @section('title', 'Swift Solution | Video Gallery Page')
-
 @push('style')
   <style>
     .g-height {
@@ -64,11 +62,8 @@
     }
   </style>
 @endpush
-
 @section('content')
-
   <div class="page-title light-background" data-aos="fade">
-
     <nav class="breadcrumbs">
       <div class="container">
         <ol>
@@ -78,20 +73,15 @@
       </div>
     </nav>
   </div>
-
   <div class="container section-title mt-5 d-flex justify-content-center" data-aos="fade-up">
     <div class="g-img">
       <h2 style="margin-bottom:0px">Video Gallery</h2>
     </div>
-    
-
   </div><!-- End Section Title -->
-
+  
   <div class="container" data-aos="fade-up">
     <div class="row">
-
       <!-- End Service Item -->
-
       @foreach ($video_gallery as $gallery)
         <div class="col-lg-3 col-md-4 col-6 mb-4" data-aos="fade-up" data-aos-delay="100">
           <div class="g-containerl position-relative p-1 h-100">
@@ -106,100 +96,12 @@
           </div>
         </div>
       @endforeach
-      {{-- <div class="col-lg-3 col-md-4 col-6 mb-4" data-aos="fade-up" data-aos-delay="100">
-        <div class="g-containerl position-relative p-1 h-100">
-          <a href="https://youtu.be/M_rH3Z_R6-U?si=DqHtrLt_U-fM-T_Z" data-fancybox="gallery" data-caption="video gallery 1">
-            <div class="position-relative g-container h-100">
-              <div class="position-absolute  v_g-overlay">
-                <i class="bi bi-play-fill video_icon"></i>
-              </div>
-              <img src="{{ asset('assets/user/assets/img/gallery/g2.jpg') }}" class="img-fluid g-height" alt="">
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-4 col-6 mb-4" data-aos="fade-up" data-aos-delay="100">
-        <div class="g-containerl position-relative p-1 h-100">
-          <a href="https://youtu.be/M_rH3Z_R6-U?si=DqHtrLt_U-fM-T_Z" data-fancybox="gallery" data-caption="video gallery 1">
-            <div class="position-relative g-container h-100">
-              <div class="position-absolute  v_g-overlay">
-                <i class="bi bi-play-fill video_icon"></i>
-              </div>
-              <img src="{{ asset('assets/user/assets/img/gallery/g4.jpg') }}" class="img-fluid g-height" alt="">
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-4 col-6 mb-4" data-aos="fade-up" data-aos-delay="100">
-        <div class="g-containerl position-relative p-1 h-100">
-          <a href="https://youtu.be/M_rH3Z_R6-U?si=DqHtrLt_U-fM-T_Z" data-fancybox="gallery" data-caption="video gallery 1">
-            <div class="position-relative g-container h-100">
-              <div class="position-absolute  v_g-overlay">
-                <i class="bi bi-play-fill video_icon"></i>
-              </div>
-              <img src="{{ asset('assets/user/assets/img/gallery/g1.jpg') }}" class="img-fluid g-height" alt="">
-            </div>
-          </a>
-        </div>
-      </div>
-
-     <div class="col-lg-3 col-md-4 col-6 mb-4" data-aos="fade-up" data-aos-delay="100">
-        <div class="g-containerl position-relative p-1 h-100">
-          <a href="https://youtu.be/M_rH3Z_R6-U?si=DqHtrLt_U-fM-T_Z" data-fancybox="gallery" data-caption="video gallery 1">
-            <div class="position-relative g-container h-100">
-              <div class="position-absolute  v_g-overlay">
-                <i class="bi bi-play-fill video_icon"></i>
-              </div>
-              <img src="{{ asset('assets/user/assets/img/gallery/g2.jpg') }}" class="img-fluid g-height" alt="">
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-4 col-6 mb-4" data-aos="fade-up" data-aos-delay="100">
-        <div class="g-containerl position-relative p-1 h-100">
-          <a href="https://youtu.be/M_rH3Z_R6-U?si=DqHtrLt_U-fM-T_Z" data-fancybox="gallery" data-caption="video gallery 1">
-            <div class="position-relative g-container h-100">
-              <div class="position-absolute  v_g-overlay">
-                <i class="bi bi-play-fill video_icon"></i>
-              </div>
-              <img src="{{ asset('assets/user/assets/img/gallery/g4.jpg') }}" class="img-fluid g-height" alt="">
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-4 col-6 mb-4" data-aos="fade-up" data-aos-delay="100">
-        <div class="g-containerl position-relative p-1 h-100">
-          <a href="https://youtu.be/M_rH3Z_R6-U?si=DqHtrLt_U-fM-T_Z" data-fancybox="gallery" data-caption="video gallery 1">
-            <div class="position-relative g-container h-100">
-              <div class="position-absolute  v_g-overlay">
-                <i class="bi bi-play-fill video_icon"></i>
-              </div>
-              <img src="{{ asset('assets/user/assets/img/gallery/g3.jpg') }}" class="img-fluid g-height" alt="">
-            </div>
-          </a>
-        </div>
-      </div> --}}
-
-      
-
     </div>
   </div>
-
-
-
-
-
-
-
 @endsection
 
 @push('script')
   <script>
-
     Fancybox.bind("[data-fancybox]", {
       zoomEffect: false,
       Carousel: {
@@ -212,6 +114,5 @@
         },
       },
     });
-
   </script>
 @endpush

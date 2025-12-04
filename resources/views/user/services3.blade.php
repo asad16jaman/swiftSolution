@@ -110,16 +110,6 @@
 @section('content')
 
 <div class="page-title light-background" data-aos="fade">
-      <!-- <div class="heading">
-        <div class="container">
-          <div class="row d-flex justify-content-center text-center">
-            <div class="col-lg-8">
-              <h1>Hotel & Restaurants</h1>
-              
-            </div>
-          </div>
-        </div>
-      </div> -->
       <nav class="breadcrumbs">
         <div class="container">
           <ol>
@@ -129,25 +119,18 @@
         </div>
       </nav>
     </div>
-
     <!-- Starter Section Section -->
     <section id="starter-section" class="starter-section section" style="padding:40px">
-        <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up" style="padding-bottom: 0px;">
          @if ($service_type == 'hotel')
             <h2>Hotel</h2>
          @else
             <h2>Restaurants</h2>
          @endif
-
-      </div><!-- End Section Title -->
-
+      </div>
       <div class="container" data-aos="fade-up">
         <div class="row">
-
         @if ($service_type == 'hotel')
-        
-       
             <div class="col-lg-4">
                 <div class="card-container">
                     <div class="flip-card  ">
@@ -157,7 +140,6 @@
                                 <img src="{{ asset('assets/user/assets/img/hotel/radisson.jpg') }}" alt="">
                                 <div class="position-absolute w-100" style="bottom: 10px;">
                                     <h3 class="card_h3">Radissan</h3>
-                                    
                                 </div>
                             </div>
                             <!-- Back Side -->
@@ -175,7 +157,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-lg-4">
                 <div class="card-container">
                     <div class="flip-card ">

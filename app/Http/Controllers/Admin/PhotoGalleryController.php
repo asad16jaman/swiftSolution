@@ -17,16 +17,9 @@ class PhotoGalleryController extends Controller
         if ($id != null) {
             $editgallery = PhotoGallery::find($id);
         }
-        
-        
         $allgallery = PhotoGallery::latest()->get();
-        
         return view('admin.photogallery', compact('allgallery', 'editgallery'));
     }
-
-
-
-
     public function store(Request $request, ?int $id = null)
     {
         $request->validate([
@@ -83,7 +76,4 @@ class PhotoGalleryController extends Controller
             return redirect()->route('error');
         }
     }
-
-
-
 }

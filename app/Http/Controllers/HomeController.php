@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Authmessage;
+use App\Models\Book;
 use App\Models\Contact;
 use App\Models\Management;
 use App\Models\Page;
@@ -101,6 +102,23 @@ class HomeController extends Controller
 
     public function returantBook(){
         return view('user.restourantBook');
+    }
+
+    public function serviceBook(Request $request,$slug){
+
+        $request->validate([
+            'name' => 'required',
+            'phone' => ['bail','required', 'regex:/^(?:\+?88)?01[0-9]{9}$/'],
+            'book_date' => 'required|date|after_or_equal:today',
+            'book_time' => 'required',
+            'people' => 'required|int',
+            'message' => 'nullable|string'
+        ]);
+
+        $data = $request->only(['message','people','book_date','book_time','phone','name','serviceName']);
+
+        Book::create($data);
+        return redirect()->route('services.detail',['slug' => $slug])->with('success','Successfully This Service has Booked');
     }
 
 

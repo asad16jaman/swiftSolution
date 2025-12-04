@@ -46,33 +46,26 @@
     .mainNav {
       top: 119px;
     }
-
     .text-blod {
       font-weight: 700;
     }
-
     /* team css is hare */
     .team-shadow {
       box-shadow: 0px 2px 8px 2px rgb(0 0 0 / 78%) !important;
       border-radius: 0px;
     }
-
     .team-border {
       border: 0px;
     }
-
     .bg-team-body {
       background-color: rgb(233 222 222 / 52%) !important;
     }
-
     /* team css is hare */
-
     .g-img {
       position: relative;
       display: inline-block;
       padding-bottom: 20px;
     }
-
     .g-img::after {
       content: "";
       position: absolute;
@@ -87,40 +80,27 @@
       box-shadow:0px 3px 12px -3px #000000c2;
       
     }
-
     @media screen and (max-width:900px){
       .mainNav{
-       
-    top: 88px;
-
+        top: 88px;
       }
     }
-
-
-    
   </style>
   @stack('style')
-
 </head>
-
 <body class="index-page">
-
   @include('user.layout.topbar')
   @include('user.layout.topbar2') 
   @include('user.layout.header')
-
   <main class="main">
     @yield('content')
   </main>
-
   @include('user.layout.footer')
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
       class="bi bi-arrow-up-short"></i></a>
-
   <!-- Preloader -->
   <div id="preloader"></div>
-
   <!-- Vendor JS Files -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="{{ asset('assets/user/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>

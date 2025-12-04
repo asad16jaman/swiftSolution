@@ -8,11 +8,9 @@
             padding: 0px !important;
             margin-bottom: 2px;
         }
-
         .iconsize {
             font-size: 15px;
         }
-
         .profileImg {
             width: 100%;
             max-width: 200px;
@@ -21,13 +19,11 @@
             border: 2px dashed #ccc;
             border-radius: 6px;
         }
-
         .tablepicture {
             width: 30px;
             height: 30px;
             object-fit: fill;
         }
-
         .headbg>tr>th {
             background-color: #3c5236;
             color: #fff;
@@ -36,17 +32,12 @@
         }
     </style>
 @endsection
-
 @section('pageside')
     @include('admin.layout.sidebar', ['page' => 'gallery_video'])
 @endsection
-
 @section('bodyContent')
-
 <div class="container">
-
     <div class="page-inner">
-
         <div class="row">
             <div class="col-12">
                 <div class="card mb-1">
@@ -64,7 +55,6 @@
                                         value="{{ old('title', optional($editgallery)->title) }}" id="title"
                                         class="form-control form-control-sm" placeholder="Type Title">
                                 </div>
-
                                 <div class="col-md-1 g-0 col-12"><label for="video_url">Video Url*</label></div>
                                 <div class="col-md-3 col-12">
                                   <input type="text" placeholder="Youtube Video" name="video_url"
@@ -74,7 +64,6 @@
                                         <p class="text-danger text-center">{{ $message }}</p>
                                     @enderror
                                 </div>
-
                                 <div class="col-md-1 g-0 col-12"><label for="" style="cursor: pointer;">Thumbnail</label></div>
                                 <div class="col-md-2 col-12">
                                   <input type="file" class="form-control form-control-sm mb-1" name="img" id="imageInput" accept="image/*">
@@ -158,36 +147,27 @@
                 </div>
             </div>
         </div>
-
-
-
     </div>
 </div>
 @endsection
-
 @push('script')
     <script src="{{ asset('assets/admin/js/plugin/datatables/datatables.min.js') }}"></script>
     <script>
         const imageInput = document.getElementById('imageInput');
         const previewImage = document.getElementById('previewImage');
-
         imageInput.addEventListener('change', function () {
             const file = this.files[0];
             if (file) {
                 const reader = new FileReader();
-
                 reader.onload = function (e) {
                     previewImage.src = e.target.result;
                 };
-
                 reader.readAsDataURL(file);
             }
         })
-
         $(document).on("click", ".deleteBtn", function (e) {
             e.preventDefault();
             let form = $(this).closest("form"); // nearest form select korbe
-
             swal({
                 title: "Are you sure?",
                 text: "You Want To Delete",
@@ -211,7 +191,6 @@
                 }
             });
         });
-
         $(document).ready(function () {
             $("#basic-datatables").DataTable({
                 sort: false

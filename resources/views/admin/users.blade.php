@@ -56,7 +56,6 @@
                                     <div class="col-md-3 col-12">
                                         <div class="">
                                             <label for="email2">User Name :</label>
-                                            
                                         </div>
                                     </div>
                                     <div class="col-md-9 col-12">
@@ -68,12 +67,10 @@
                                         @enderror
                                     </div>
                                 </div>
-
                                 <div class="row mb-2">
                                     <div class="col-md-3 col-12">
                                         <div class="">
                                             <label for="email2">Full Name :</label>
-                                            
                                         </div>
                                     </div>
                                     <div class="col-md-9 col-12">
@@ -81,12 +78,10 @@
                                             placeholder="Enter Full Name">
                                     </div>
                                 </div>
-
                                 <div class="row mb-2">
                                     <div class="col-md-3 col-12">
                                         <div class="">
                                             <label for="email2">User Email</label>
-                                            
                                         </div>
                                     </div>
                                     <div class="col-md-9 col-12">
@@ -123,7 +118,6 @@
                                           <input type="password" class="form-control p-1" name="password" placeholder="Password">
                                     </div>
                                 </div>
-
                                 <div class="row">
                                     <div class="col-md-12 col-12 d-flex justify-content-center mt-1">
                                          <label for="imageInput" style="cursor: pointer;">
@@ -134,15 +128,12 @@
                                                 class="profileImg"
                                                 style="">
                                         </label>
-
                                         <!-- hidden input -->
                                         <input type="file" name="picture" id="imageInput" name="image" accept="image/*" style="display: none;">
                                     </div>
                                 </div>
-
                             </div>
                         </div>
-
                         <div class="d-flex justify-content-end">
                            <input type="submit" value="Submit" class="btn btn-primary me-3 p-2">
                         </div>
@@ -159,7 +150,6 @@
                             <div class="table-responsive">
                                 <div id="basic-datatables_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
                                     <div class="row">
-                                        
                                         <div class="col-sm-12 col-md-6 offset-md-6">
                                             <div id="basic-datatables_filter" class="dataTables_filter">
                                                 <label class="d-flex justify-content-end">Search:
@@ -188,9 +178,7 @@
                                                         <th style="width: 81.375px;">Action</th>
                                                     </tr>
                                                 </thead>
-
                                                 <tbody>
-
                                                 @forelse($allUsers as $user)
                                                     <tr role="row" class="odd" >
                                                         <td class="sorting_1">{{ $loop->iteration }}</td>
@@ -206,7 +194,6 @@
                                                         <td>{{ $user->email }}</td>
                                                         <td>{{ $user->type }}</td>
                                                         <td class="d-flex justify-content-center">
-                                                            
                                                             <a href="{{ route('admin.users',['id' => $user->id,'page'=>request()->query('page'),'search'=>request()->query('search')]) }}" class="btn btn-info p-1 me-1">
                                                                 <i class="fas fa-edit iconsize"></i>
                                                             </a>
@@ -238,7 +225,6 @@
                                                 <a href="{{ $allUsers->nextPageUrl() }}" class="btn btn-primary mx-2 p-1"><i
                                                         class="fas fa-hand-point-right "></i></a>
                                             @endif
-
                                         </div>
                                     </div>
                                 </div>
@@ -246,8 +232,6 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
 </div>
@@ -255,29 +239,21 @@
 
 @push('script')
 <script>
-    
-
-
     const imageInput = document.getElementById('imageInput');
     const previewImage = document.getElementById('previewImage');
-
     imageInput.addEventListener('change', function () {
         const file = this.files[0];
         if (file) {
             const reader = new FileReader();
-
             reader.onload = function (e) {
                 previewImage.src = e.target.result;
             };
-
             reader.readAsDataURL(file);
         }
     })
-
      $(document).on("click", ".deleteBtn", function (e) {
                 e.preventDefault();
                 let form = $(this).closest("form"); // nearest form select korbe
-
                 swal({
                     title: "Are you sure?",
                     text: "You Want To Delete",
@@ -302,5 +278,4 @@
                 });
             });
 </script>
-
 @endpush

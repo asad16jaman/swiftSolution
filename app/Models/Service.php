@@ -8,10 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Service extends Model
 {
     //
-
     protected $guarded = [] ;
-
-
     public function wing(){
         return $this->belongsTo(Wing::class);
     }

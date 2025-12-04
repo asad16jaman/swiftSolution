@@ -8,17 +8,14 @@
             position: relative;
             overflow: hidden;
         }
-
         /* Image Zoom Effect */
         .card-container img {
             width: 100%;
             transition: transform 0.6s ease;
         }
-
         .card-container:hover img {
             transform: scale(1.15);
         }
-
         /* background: #0f4e818a; */
         /* Overlay Effect */
         .overlay {
@@ -33,18 +30,15 @@
             left: 0;
             transition: top 0.5s ease-in-out;
         }
-
         .img-fluid{
             height: 218px;
         }
         .card-container:hover .overlay {
             top: 0;
         }
-
         .card-container:hover .card_h3 {
             display: none;
         }
-
         .card_h3 {
             font-weight: 900;
             text-align: center;
@@ -57,11 +51,9 @@
             margin-bottom: 0;
             padding: 8px 0;
         }
-
         .nameOfService {
             /* position: absolute; */
         }
-
         .nameOfService_container {
             bottom: 0px;
             margin-bottom: 0;
@@ -70,7 +62,6 @@
             transition: 0.35s ease-in-out;
             /* transition-delay: 0.35s; */
         }
-
         .nameOfService {
             margin-bottom: 0px;
             padding-bottom: 10px;
@@ -79,18 +70,15 @@
             text-transform: uppercase;
             font-family: cursive;
         }
-
         .card-container:hover .nameOfService_container {
             left: 0;
         }
-
         .view_detailContainer {
             padding: 9px 13px;
             position: absolute;
             right: 0;
             bottom: 0;
         }
-
         .view_detail_btn {
             color: #fff;
             padding: 1px 2px;
@@ -98,19 +86,14 @@
             transition-delay: 1s;
             border-bottom: 1px solid #fff;
         }
-
         .card-container:hover .view_detail_btn {
             display: block;
         }
-
         .card-change {
             border: none;
             box-shadow: 1px 1px 2px 2px #00000029;
             overflow: hidden;
         }
-        
-        
-        
     </style>
 @endpush
 
@@ -164,113 +147,11 @@
                     </a>
                 </div>
             @endforeach
-                
-
-                {{-- <div class="col-lg-4 mb-4 col-12 col-md-6">
-                    <div>
-                        <div class="card card-change">
-                            <div class="card-body p-0 position-relative card-container">
-                                <img src="{{ asset('assets/user/assets/img/hotel/meri.webp') }}" alt="" class="img-fluid">
-                                <!--  -->
-                                <div class="overlay"></div>
-                                <div class="position-absolute nameOfService_container">
-                                    <p class="nameOfService">Le-Meridien</p>
-                                </div>
-                                <div class="view_detailContainer"><a href="{{ route('services.detail',['uid' => 'dkdsflsdl']) }}" class="view_detail_btn">View Detail</a></div>
-                            </div>
-                            <div>
-                                <h3 class="card_h3">Le-Meridien</h3>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mb-4 col-12 col-md-6">
-                    <div>
-                        <div class="card card-change">
-                            <div class="card-body p-0 position-relative card-container">
-                                <img src="{{ asset('assets/user/assets/img/hotel/she.jpg') }}" alt="" class="img-fluid">
-                                <!--  -->
-                                <div class="overlay"></div>
-                                <div class="position-absolute nameOfService_container">
-                                    <p class="nameOfService">Sheraton</p>
-                                </div>
-                                <div class="view_detailContainer"><a href="{{ route('services.detail',['uid' => 'dkdsflsdl']) }}" class="view_detail_btn">View Detail</a></div>
-                            </div>
-                            <div>
-                                <h3 class="card_h3">Sheraton</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mb-4 col-12 col-md-6">
-                    <div>
-                        <div class="card card-change">
-                            <div class="card-body p-0 position-relative card-container">
-                                <img src="{{ asset('assets/user/assets/img/hotel/hilton.jpg') }}" alt="" class="img-fluid">
-                                <!--  -->
-                                <div class="overlay"></div>
-                                <div class="position-absolute nameOfService_container">
-                                    <p class="nameOfService">Hilton</p>
-                                </div>
-                                <div class="view_detailContainer"><a href="{{ route('services.detail',['uid' => 'dkdsflsdl']) }}" class="view_detail_btn">View Detail</a></div>
-                            </div>
-                            <div>
-                                <h3 class="card_h3">Hilton</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mb-4 col-12 col-md-6">
-                    <div>
-                        <div class="card card-change">
-                            <div class="card-body p-0 position-relative card-container">
-                               <img src="{{ asset('assets/user/assets/img/hotel/hayt.webp') }}" alt="" class="img-fluid">
-                                <!--  -->
-                                <div class="overlay"></div>
-                                <div class="position-absolute nameOfService_container">
-                                    <p class="nameOfService">Hyatt Regency</p>
-                                </div>
-                                <div class="view_detailContainer"><a href="{{ route('services.detail',['uid' => 'dkdsflsdl']) }}" class="view_detail_btn">View Detail</a></div>
-                            </div>
-                            <div>
-                                <h3 class="card_h3">Hyatt Regency</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mb-4 col-12 col-md-6">
-                    <div>
-                        <div class="card card-change">
-                            <div class="card-body p-0 position-relative card-container">
-                                <img src="{{ asset('assets/user/assets/img/hotel/caption.jpg') }}" alt="" class="img-fluid">
-                                <!--  -->
-                                <div class="overlay"></div>
-                                <div class="position-absolute nameOfService_container">
-                                    <p class="nameOfService">InterContinental</p>
-                                </div>
-                                <div class="view_detailContainer"><a href="{{ route('services.detail',['uid' => 'dkdsflsdl']) }}" class="view_detail_btn">View Detail</a></div>
-                            </div>
-                            <div>
-                                <h3 class="card_h3">InterContinental</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
-
-                
             </div>
         </div>
     </section><!-- /Starter Section Section -->
-
 @endsection
-
 @push('script')
     <script>
-
     </script>
 @endpush

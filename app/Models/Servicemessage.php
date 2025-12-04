@@ -7,9 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Servicemessage extends Model
 {
     //
-
     protected $guarded = [];
-
     public function service(){
         return $this->belongsTo(Service::class);
     }

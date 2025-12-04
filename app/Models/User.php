@@ -17,14 +17,7 @@ class User extends Authenticatable
      *
      * @var list<string>
      */
-    // protected $fillable = [
-    //     'username',
-    //     'email',
-    //     'fullname',
-    //     'picture',
-    //     'type',
-    //     'password',
-    // ];
+   
     protected $guarded = [];
 
     /**
@@ -37,9 +30,6 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    public function wishlist(){
-        return $this->hasMany(Wishlist::class);
-    }
 
     /**
      * Get the attributes that should be cast.

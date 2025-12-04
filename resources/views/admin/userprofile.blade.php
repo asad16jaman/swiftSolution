@@ -4,8 +4,6 @@
 
 @section('style')
 <style>
-  
-    
     .profileImg{
         width: auto;
         height: 100px; 
@@ -13,21 +11,16 @@
         border: 2px dashed #ccc;
         border-radius: 6px;
     }
-    
-    
 </style>
 @endsection
 
 @section('pageside')
   @include('admin.layout.sidebar',['page' => 'profile'])
 @endsection
-
 @section('bodyContent')
 
     <div class="container">
-
         <div class="page-inner">
-
             <div class="card">
                 <div class="card-header p-1 bg-primary text-white">
                     <h6>Create User</h6>
@@ -36,13 +29,11 @@
                     @csrf
                     <div class="card-body p-3 ">
                         <div class="row">
-
                             <div class="col-md-6 col-12">
                                 <div class="row mb-2">
                                     <div class="col-md-3 col-12">
                                         <div class="">
                                             <label for="email2">User Name :</label>
-                                            
                                         </div>
                                     </div>
                                     <div class="col-md-9 col-12">
@@ -50,12 +41,10 @@
                                             placeholder="Enter Username">
                                     </div>
                                 </div>
-
                                 <div class="row mb-2">
                                     <div class="col-md-3 col-12">
                                         <div class="">
                                             <label for="email2">Full Name :</label>
-                                            
                                         </div>
                                     </div>
                                     <div class="col-md-9 col-12">
@@ -63,12 +52,10 @@
                                             placeholder="Enter Full Name">
                                     </div>
                                 </div>
-
                                 <div class="row mb-2">
                                     <div class="col-md-3 col-12">
                                         <div class="">
                                             <label for="email2">User Email</label>
-                                            
                                         </div>
                                     </div>
                                     <div class="col-md-9 col-12">
@@ -85,7 +72,6 @@
                                         @if($editUser)
                                         <option value="customer">Customer</option>
                                         <option @selected( $editUser->type == 'admin' ) value="admin" >Admin</option>
-
                                         @else
                                             <option value="customer">Customer</option>
                                             <option value="admin" >Admin</option>
@@ -105,7 +91,6 @@
                                           <input type="password" class="form-control p-1" name="password" placeholder="Password">
                                     </div>
                                 </div>
-
                                 <div class="row">
                                     <div class="col-md-12 col-12 d-flex justify-content-center mt-1">
                                          <label for="imageInput" style="cursor: pointer;">
@@ -116,16 +101,12 @@
                                                 class="profileImg"
                                                 style="">
                                         </label>
-
                                         <!-- hidden input -->
                                         <input type="file" name="picture" id="imageInput" name="image" accept="image/*" style="display: none;">
                                     </div>
                                 </div>
-
-
                             </div>
                         </div>
-
                         <div class="d-flex justify-content-end">
                            <input type="submit" value="Submit" class="btn btn-primary me-3 p-2">
                         </div>
@@ -135,23 +116,17 @@
         </div>
 </div>
 @endsection
-
 @push('script')
 <script>
-    
-
     const imageInput = document.getElementById('imageInput');
     const previewImage = document.getElementById('previewImage');
-
     imageInput.addEventListener('change', function () {
         const file = this.files[0];
         if (file) {
             const reader = new FileReader();
-
             reader.onload = function (e) {
                 previewImage.src = e.target.result;
             };
-
             reader.readAsDataURL(file);
         }
     })

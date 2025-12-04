@@ -72,7 +72,6 @@ class SliderController extends Controller
         }catch (Exception $e){
             Log::error("Error is commin from SlideController Storage method");
             return redirect()->route('error');
-
         }
     }
 
@@ -92,7 +91,6 @@ class SliderController extends Controller
             return redirect()->route('error');
         }
     }
-
     public function status(Request $request,$id){
         $status = $request->input('status');
         $edit = Slider::findOrFail($id);

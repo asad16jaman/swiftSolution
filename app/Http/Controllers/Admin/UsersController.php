@@ -13,8 +13,6 @@ use Illuminate\Support\Facades\Storage;
 class UsersController extends Controller
 {
     //
-
-
     public function index(Request $request,?int $id = null ){
         $editUser = null;
         if( $id != null ){
@@ -63,7 +61,6 @@ class UsersController extends Controller
         }
         $data['password'] = $request->password;
         $data['username'] = $request->username;
-
         try{
             if($request->hasFile('picture')){
                 $path = $request->file('picture')->store('profile');
@@ -92,16 +89,12 @@ class UsersController extends Controller
             Log::error("this message is from : ".__CLASS__."Line is : ".__LINE__." messages is ".$e->getMessage());
             return redirect()->route('error');
         }
-       
     }
 
     public function editUser($id){
         $editUser = User::find($id);
         return view("admin.userprofile",compact(['editUser']));
     }
-
-
-
     public function editUserStore(Request $request,int $id){
              $data = [
                 'email' => $request->email,

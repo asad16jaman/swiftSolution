@@ -18,13 +18,11 @@ class AuthMessageController extends Controller
     }
 
     public function store(Request $request){
-
         $request->validate([
             'name'=> 'required',
             'designation' => 'required',
             'company' => 'required'
         ]);
-        
          $data = $request->only(['name','speech','designation','company']);
          $ch = Authmessage::first();
         if ($ch) {
@@ -46,9 +44,6 @@ class AuthMessageController extends Controller
                 return redirect()->route('error');
             }
         }
-
-
-      
         try{
             if ($request->hasFile('img')) {
                 $path = $request->file('img')->store('chairman');

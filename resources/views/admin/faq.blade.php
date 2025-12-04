@@ -8,11 +8,9 @@
             padding: 0px !important;
             margin-bottom: 2px;
         }
-
         .iconsize {
             font-size: 15px;
         }
-
         .profileImg {
             width: 150px;
             height: 70px;
@@ -20,13 +18,11 @@
             /* border: 2px dashed #ccc; */
             border-radius: 6px;
         }
-
         .tablepicture {
             width: 30px;
             height: 30px;
             object-fit: fill;
         }
-
         .headbg > tr > th{
         background-color: #3c5236;
         color: #fff;
@@ -35,17 +31,12 @@
     }
     </style>
 @endsection
-
 @section('pageside')
   @include('admin.layout.sidebar',['page' => 'faq'])
 @endsection
-
 @section('bodyContent')
-
     <div class="container">
-
         <div class="page-inner">
-
             <div class="card">
                 <div class="card-header pt-1 pb-0">
                     <h4 class="text-center">Create Faq</h4>
@@ -57,7 +48,6 @@
                                     <div class="col-md-1 col-12 p-1">
                                         <div class="">
                                             <label for="email2">Question :</label>
-                                            
                                         </div>
                                     </div>
                                     <div class="col-md-11 col-12">
@@ -69,12 +59,10 @@
                                         @enderror
                                     </div>
                                 </div>
-
                                 <div class="row mb-2">
                                     <div class="col-md-1 col-12 p-1">
                                         <div class="">
                                             <label for="email2">Answer :</label>
-                                            
                                         </div>
                                     </div>
                                     <div class="col-md-11 col-12">
@@ -84,15 +72,12 @@
                                         @enderror
                                     </div>
                                 </div>
-
                         <div class="d-flex justify-content-end">
                             <input type="submit" value="Submit" class="btn btn-primary me-3 p-2">
                         </div>
                     </div>
                 </form>
             </div>
-
-
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
@@ -116,8 +101,6 @@
                                                         <th>Action</th>
                                                     </tr>
                                                 </thead>
-
-                                               
                                                 <tbody>
                                                     @forelse($datas as $msg)
                                                         <tr role="row" class="odd">
@@ -125,7 +108,6 @@
                                                             <td>{{ $msg->question }}</td>
                                                             <td>{{ substr($msg->answer,0,30) }}...</td>
                                                             <td class="d-flex justify-content-center">
-
                                                                 <form
                                                                     action="{{ route('admin.faq.delete', ['id' => $msg->id]) }}"
                                                                     method="post">
@@ -137,38 +119,23 @@
                                                             </td>
                                                         </tr>
                                                     @empty
-                                                        <p>there is no Message</p>
-
+                                                        <p>there is no faq</p>
                                                     @endforelse
                                                 </tbody>
                                             </table>
                                         </div>
                                     </div>
-                                    
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-
-
-
-
-
-
-
-
         </div>
 
 @endsection
-
     @push('script')
         <script>
-
-
             
         </script>
-
     @endpush

@@ -49,7 +49,6 @@
                                             placeholder="Enter Email">
                                     </div>
                                 </div>
-                                
                                 <div class="row mb-2">
                                     <div class="col-md-3 col-12">
                                         <div class="">
@@ -60,7 +59,6 @@
                                         <input type="text" value="{{ old('phone',optional($company)->phone)}}" name="phone" class="form-control p-1 @error('phone') is-invalid @enderror" id="" placeholder="Enter Phone">
                                     </div>
                                 </div>
-
                                 <div class="row mb-2">
                                     <div class="col-md-3 col-12">
                                         <div class="">
@@ -71,7 +69,6 @@
                                         <input type="text" value="{{ old('service_time',optional($company)->service_time)}}" name="service_time" class="form-control p-1 @error('service_time') is-invalid @enderror" id="" placeholder="Enter Service Time">
                                     </div>
                                 </div>
-
                                 <div class="row mb-2">
                                     <div class="col-md-3 col-12">
                                         <div class="">
@@ -85,8 +82,6 @@
                                          @enderror
                                     </div>
                                 </div>
-
-
                                 <div class="row mb-2">
                                    <div class="col-md-3 col-12 mt-1">
                                          <label for="imageInput3" style="cursor: pointer;">
@@ -105,15 +100,6 @@
                                                 style="">
                                     </div>
                                 </div>
-
-
-
-
-
-
-
-
-
                                  <div class="row mb-2">
                                    <div class="col-md-3 col-12 mt-1">
                                          <label for="imageInput2" style="cursor: pointer;">
@@ -132,31 +118,6 @@
                                                 style="">
                                     </div>
                                 </div>
-
-                                {{-- 
-                                     <div class="row mb-2">
-                                   <div class="col-md-3 col-12 mt-1">
-                                         <label for="imageInput" style="cursor: pointer;">
-                                            Logo
-                                        </label>
-                                        @error('logo')
-                                            <p>{{ $message }}</p>
-                                        @enderror
-                                    </div>
-                                    <div class="col-md-9 col-12">
-                                        <input type="file" class="form-control form-control-sm" name="logo" id="imageInput" name="image" accept="image/*">
-                                        <img id="previewImage" 
-                                                src="{{ ($company && $company->logo) ? asset('storage/'.$company->logo) : asset('assets/admin/img/demoUpload.jpg')}}" 
-                                                alt="Demo Image" 
-                                                class="profileImg"
-                                                style="">
-                                    </div>
-                                </div>
-                                
-                                --}}
-
-
-
                             </div>
                             <div class="col-md-6 col-12">
                                 <div class="row mb-2">
@@ -259,11 +220,9 @@
 			</div>
         </div>
 @endsection
-
 @section('pageside')
   @include('admin.layout.sidebar',['page' => 'company'])
 @endsection
-
 @push('script')
     <script>
         const imageInput = document.getElementById('imageInput');
@@ -279,10 +238,8 @@
                 reader.readAsDataURL(file);
             }
         })
-
         const imageInput2 = document.getElementById('imageInput2');
         const previewImage2 = document.getElementById('previewImage2');
-
         imageInput2.addEventListener('change', function () {
             const file = this.files[0];
             if (file) {
@@ -293,10 +250,8 @@
                 reader.readAsDataURL(file);
             }
         })
-
         const imageInput3 = document.getElementById('imageInput3');
         const previewImage3 = document.getElementById('previewImage3');
-
         imageInput3.addEventListener('change', function () {
             const file = this.files[0];
             if (file) {
@@ -307,7 +262,5 @@
                 reader.readAsDataURL(file);
             }
         })
-
-
     </script>
 @endpush

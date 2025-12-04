@@ -144,36 +144,27 @@
                     </div>
                 </div>
             </div>
-
-
-
         </div>
     </div>
 @endsection
-
 @push('script')
 <script src="{{ asset('assets/admin/js/plugin/datatables/datatables.min.js') }}"></script>
     <script>
         const imageInput = document.getElementById('imageInput');
         const previewImage = document.getElementById('previewImage');
-
         imageInput.addEventListener('change', function () {
             const file = this.files[0];
             if (file) {
                 const reader = new FileReader();
-
                 reader.onload = function (e) {
                     previewImage.src = e.target.result;
                 };
-
                 reader.readAsDataURL(file);
             }
         })
-
         $(document).on("click", ".deleteBtn", function (e) {
             e.preventDefault();
             let form = $(this).closest("form"); // nearest form select korbe
-
             swal({
                 title: "Are you sure?",
                 text: "You Want To Delete",
